@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+
+  <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Concours Environnemental Allal Ben Abdellah</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  
+
+ <link href="styles.css" rel="stylesheet">
+  
+</head>
+
+<body>
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      
+
+      <nav id="navmenu" class="navmenu">
+        <ul> 
+          <li><a style="color:white; " href="quiz_arabic.html" class="btn btn-success btn-lg px-4 py-2">🚀 اجتز المسابقة </a></li>
+          
+          
+         
+          <li><a href="testimonials.html">اراء المشاركين</a></li>
+          <li><a href="about.html">معلومات عن المسابقة </a></li>
+         <li><a href="index.html" class="active"> الصفحة الرئيسية  </a></li>
+          
+         
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+<a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.jpg" alt="AgriCulture">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+    </div>
+  </header>
+  <main class="main">
+    <button id="redirectButtonfrancais" class="btn btn-success btn-lg px-8 py-2">الفرنسية </button>
+
+    <script src="script_bouton_francais.js"></script> <!-- Lien vers le fichier JavaScript francais-->
+
+    
+    
+    <button id="redirectButtonarabe" class="btn btn-success btn-lg px-4 py-2">العربية</button>
+
+    <script src="script_bouton_arabe.js"></script> 
+
+
+     
+    <button id="redirectButtonanglais" class="btn btn-success btn-lg px-4 py-2">الانجليزية</button>
+
+    <script src="script_bouton_anglais.js"></script> 
+   
+    <!-- Écran d'accueil -->
+    <div id="welcome-screen" class="screen">
+       
+        <h1 class="welcome-title">مرحبًا بك في المسابقة الثقافية البيئية</h1>
+        <p class="welcome-subtitle">التي ينظمها نادي البيئة لمؤسسة علال بن عبد الله</p>
+        <form id="user-info-form" class="welcome-form">
+            <input type="text" id="name" placeholder="الاسم الكامل" required>
+            <input type="number" id="age" placeholder="السن " required>
+            <input type="text" id="school" placeholder=" المؤسسة " required>
+            <p class="welcome-note">ملاحظة: يجب عليك إدخال جميع المعلومات لبدء المسابقة.</p>
+            <button type="submit" class="welcome-button">بدء المسابقة</button>
+        </form>
+    </div>
+
+    <!-- Interface principale -->
+    <div id="main-menu" class="screen" style="display:none;">
+        <header class="main-header">
+            <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Logo de l'institution" class="logo institution-logo">
+        </header>
+        <nav class="main-nav">
+            <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">الصفحة الرئيسية</button>
+            <button onclick="showSection('training')" class="btn btn-success btn-lg px-4 py-2">فضاء التكوين</button>
+            <button onclick="showSection('about')" class="btn btn-success btn-lg px-4 py-2">حول المسابقة</button>
+            <button onclick="showSection('participate')" class="btn btn-success btn-lg px-4 py-2">المشاركة في المسابقة</button>
+        </nav>
+      <br><br><br><br><br><br><br><br><br>
+        <div id="content" class="content-section">
+            <!-- Contenu qui change selon la section sélectionnée -->
+        </div>
+
+        <!-- Section des développeurs (apparaît uniquement sur l'écran principal) -->
+        <div id="developers-section" class="developers-section" style="display: none;">
+            <h3 class="developers-title">المطورين: :</h3>
+            <p class="developer-name">سلمان العمارتي</p>
+            <p class="developer-name">رياض بوسيفي</p>
+            <p class="developer-supervisor">تحت إشراف: <strong>الأستاذ أنس جروندي</strong></p>
+        </div>
+    </div>
+
+    <!-- Certificat d'appréciation -->
+    <div id="certificate" class="screen" style="display:none;">
+        <h1 class="certificate-title">هنيئًا لك  <span id="certificate-name"></span> !</h1>
+        <p class="certificate-message">لقد اجتزت المسابقة بنجاح وكنت من بين الأفضل!</p>
+        <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Logo de l'institution" class="logo institution-logo" style="height: 80px;">
+        <img src="https://i.postimg.cc/8CvJyQ6Z/environment-club-logo.png" alt="Logo du Club Environnemental" class="logo club-logo" style="height: 80px;">
+        <button onclick="downloadCertificate()" class="btn btn-success btn-lg px-4 py-2">تحميل الشهادة</button>
+        <button onclick="showWrongAnswers()" class="btn btn-success btn-lg px-4 py-2">عرض الإجابات الخاطئة</button>
+        <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">العودة إلى الصفحة الرئيسية</button>
+        <!-- Section des développeurs (apparaît uniquement sur la page de fin) -->
+        <div id="developers-section-end" class="developers-section">
+            <h3 class="developers-title">المطورين:</h3>
+            <p class="developer-name">سلمان العمارتي</p>
+             <p class="developer-supervisor">تحت إشراف: <strong>الأستاذ أنس جروندي</strong></p>
+        </div>
+    </div>
+ <footer id="footer" class="footer dark-background">
+
+   
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+    <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+    <script src="script_arabic.js"></script> 
+
+
+
+
+    
+   
+
+
+  </main> 
+</body>
+
+</html>
