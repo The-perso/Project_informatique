@@ -11,11 +11,6 @@ body {
 
 /* début de ce que j'ai ajouter */
 
-/* Style général du bouton francais*/
-
-
-
-
 /* fin de l'ajoux */
 
 .screen {
@@ -85,7 +80,7 @@ h3 {
 }
 
 .main-header {
-    background-color: white;
+    background: linear-gradient(110deg, #ccda11,#024c3d);
     /* La couleur de la barre supérieure est blanche */
     padding: 10px;
     display: flex;

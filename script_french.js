@@ -33,7 +33,7 @@ function showSection(sectionId) {
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Pollution de l'air</button>
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Pollution environnementale</button>
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Pollution de l'eau et des océans</button><br><br>
-                <button oclass="btn btn-success btn-lg px-4 py-2" nclick="showTopic('warming')">Réchauffement climatique</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Réchauffement climatique</button>
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Gestion des déchets solides</button>
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Énergie renouvelable</button>
                 <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversité</button>

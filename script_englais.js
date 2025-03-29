@@ -7,7 +7,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let timerInterval;
 let wrongAnswers = [];
-// Transition from welcome screen to main menu
+// Transition from the welcome screen to the main menu
 document.getElementById('user-info-form').onsubmit = function(event) {
     event.preventDefault();
     userName = document.getElementById('name').value;
@@ -17,7 +17,7 @@ document.getElementById('user-info-form').onsubmit = function(event) {
     document.getElementById('main-menu').style.display = 'block';
     showSection('home');
 };
-// Display sections
+// Displaying sections
 function showSection(sectionId) {
     const content = document.getElementById('content');
     const developersSection = document.getElementById('developers-section');
@@ -30,50 +30,50 @@ function showSection(sectionId) {
         case 'training':
             htmlContent = `
                 <h2>Training Space</h2>
-                <button onclick="showTopic('air')">Air Pollution</button>
-                <button onclick="showTopic('environment')">Environmental Pollution</button>
-                <button onclick="showTopic('water')">Water and Ocean Pollution</button>
-                <button onclick="showTopic('warming')">Global Warming</button>
-                <button onclick="showTopic('solid-waste')">Solid Waste Management</button>
-                <button onclick="showTopic('renewable-energy')">Renewable Energy</button>
-                <button onclick="showTopic('biodiversity')">Biodiversity</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Air Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Environmental Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Water and Ocean Pollution</button><br><br>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Global Warming</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Solid Waste Management</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Renewable Energy</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversity</button>
             `;
             developersSection.style.display = 'none';
             break;
         case 'about':
             htmlContent = `
                 <h2>About the Quiz</h2>
-                <p>The program definition is a game consisting of multiple questions, each with four options.</p>
-                <p>Participation conditions: Having a phone or computer and accessing the dedicated website for the Environmental Club of the institution.</p>
-                <p>Program objective: Enable all students to successfully complete the Allal Bin Abdullah Environmental Quiz and encourage students to use modern technology for educational and environmental purposes.</p>
+                <p>The program is a game consisting of several questions, each having four options.</p>
+                <p>Participation conditions: Have a phone or computer and access the dedicated website of the Environmental Club of the institution.</p>
+                <p>Program objective: Allow all students to pass the Allal Bin Abdullah Environmental Quiz and encourage students to use modern technology for educational and environmental purposes.</p>
             `;
             developersSection.style.display = 'none';
             break;
         case 'participate':
             htmlContent = `
                 <h2>Participate in the Quiz</h2>
-                <button onclick="startQuiz('air')">Air Pollution</button>
-                <button onclick="startQuiz('environment')">Environmental Pollution</button>
-                <button onclick="startQuiz('water')">Water and Ocean Pollution</button>
-                <button onclick="startQuiz('warming')">Global Warming</button>
-                <button onclick="startQuiz('solid-waste')">Solid Waste Management</button>
-                <button onclick="startQuiz('renewable-energy')">Renewable Energy</button>
-                <button onclick="startQuiz('biodiversity')">Biodiversity</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Air Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Environmental Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Water and Ocean Pollution</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Global Warming</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Solid Waste Management</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Renewable Energy</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversity</button>
             `;
             developersSection.style.display = 'none';
             break;
-            // Add awareness messages section
+            // Adding the awareness messages section
             const awarenessMessages = `
     <div id="awareness-messages" class="awareness-section">
         <h3 class="awareness-title">Awareness Messages</h3>
-        <p class="awareness-message">"The environment is our shared heritage; let's preserve it for future generations."</p>
+        <p class="awareness-message">"The environment is our common heritage; let's preserve it for future generations."</p>
         <p class="awareness-message">"Every drop of water wasted today may be precious tomorrow."</p>
-        <p class="awareness-message">"Planting one tree can make a big difference."</p>
+        <p class="awareness-message">"Planting a tree can make a big difference."</p>
         <p class="awareness-message">"Pollution is everyone's problem, and the solution starts with you."</p>
         <p class="awareness-message">"Nature doesn't need us, but we need nature."</p>
     </div>
 `;
-            // Modify the showSection function to display awareness messages only on the home page
+            // Modifying the showSection function to display awareness messages only on the home page
             function showSection(sectionId) {
                 const content = document.getElementById('content');
                 const developersSection = document.getElementById('developers-section');
@@ -82,42 +82,43 @@ function showSection(sectionId) {
                 switch (sectionId) {
                     case 'home':
                         htmlContent = '<p>Welcome to the home page.</p>';
-                        // Add awareness messages only on the home page
+                        // Adding awareness messages only on the home page
                         htmlContent += awarenessMessages;
                         developersSection.style.display = 'block';
                         break;
                     case 'training':
                         htmlContent = `
                 <h2>Training Space</h2>
-                <button onclick="showTopic('air')">Air Pollution</button>
-                <button onclick="showTopic('environment')">Environmental Pollution</button>
-                <button onclick="showTopic('water')">Water and Ocean Pollution</button>
-                <button onclick="showTopic('warming')">Global Warming</button>
-                <button onclick="showTopic('solid-waste')">Solid Waste Management</button>
-                <button onclick="showTopic('renewable-energy')">Renewable Energy</button>
-                <button onclick="showTopic('biodiversity')">Biodiversity</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Air Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Environmental Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Water and Ocean Pollution</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Global Warming</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Solid Waste Management</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Renewable Energy</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversity</button>
             `;
+
                         developersSection.style.display = 'none';
                         break;
                     case 'about':
                         htmlContent = `
                 <h2>About the Quiz</h2>
-                <p>The program definition is a game consisting of multiple questions, each with four options.</p>
-                <p>Participation conditions: Having a phone or computer and accessing the dedicated website for the Environmental Club of the institution.</p>
-                <p>Program objective: Enable all students to successfully complete the Allal Bin Abdullah Environmental Quiz and encourage students to use modern technology for educational and environmental purposes.</p>
+                <p>The program is a game consisting of several questions, each having four options.</p>
+                <p>Participation conditions: Have a phone or computer and access the dedicated website of the Environmental Club of the institution.</p>
+                <p>Program objective: Enable all students to pass the Allal Bin Abdullah Environmental Quiz and encourage students to use modern technology for educational and environmental purposes.</p>
             `;
                         developersSection.style.display = 'none';
                         break;
                     case 'participate':
                         htmlContent = `
                 <h2>Participate in the Quiz</h2>
-                <button onclick="startQuiz('air')">Air Pollution</button>
-                <button onclick="startQuiz('environment')">Environmental Pollution</button>
-                <button onclick="startQuiz('water')">Water and Ocean Pollution</button>
-                <button onclick="startQuiz('warming')">Global Warming</button>
-                <button onclick="startQuiz('solid-waste')">Solid Waste Management</button>
-                <button onclick="startQuiz('renewable-energy')">Renewable Energy</button>
-                <button onclick="startQuiz('biodiversity')">Biodiversity</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Air Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Environmental Pollution</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Water and Ocean Pollution</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Global Warming</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Solid Waste Management</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Renewable Energy</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversity</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -127,7 +128,7 @@ function showSection(sectionId) {
     }
     content.innerHTML = htmlContent;
 }
-// Display topic information
+// Display information about the topic
 function showTopic(topic) {
     const content = document.getElementById('content');
     let info = '';
@@ -135,8 +136,8 @@ function showTopic(topic) {
         case 'air':
             info = `
                 <h3>Air Pollution</h3>
-                <p>Air pollution occurs due to harmful gas emissions from cars and factories. These gases include carbon dioxide and nitrogen oxides, which cause serious diseases like asthma and allergies.</p>
-                <p>Air pollution can be reduced by:</p>
+                <p>Air pollution is caused by harmful gas emissions from cars and factories. These gases include carbon dioxide and nitrogen oxides, which cause serious diseases like asthma and allergies.</p>
+                <p>We can reduce air pollution by:</p>
                 <ul>
                     <li>Planting more trees.</li>
                     <li>Using renewable energy.</li>
@@ -148,7 +149,7 @@ function showTopic(topic) {
             info = `
                 <h3>Environmental Pollution</h3>
                 <p>Environmental pollution includes air, water, and soil pollution. This pollution is caused by human activities such as industry and improper waste disposal.</p>
-                <p>Ways to reduce environmental pollution:</p>
+                <p>Methods to reduce environmental pollution:</p>
                 <ul>
                     <li>Recycling.</li>
                     <li>Reducing plastic use.</li>
@@ -159,7 +160,7 @@ function showTopic(topic) {
         case 'water':
             info = `
                 <h3>Water and Ocean Pollution</h3>
-                <p>This occurs due to the dumping of chemical and oil waste into water bodies. It leads to the destruction of marine habitats and the spread of diseases.</p>
+                <p>This occurs due to the discharge of chemical and oil waste into water bodies. It leads to the destruction of marine habitats and the spread of diseases.</p>
                 <p>Solutions for water pollution:</p>
                 <ul>
                     <li>Treating water before discharge.</li>
@@ -171,11 +172,11 @@ function showTopic(topic) {
         case 'warming':
             info = `
                 <h3>Global Warming</h3>
-                <p>The increase in Earth's temperature due to greenhouse gases like carbon dioxide and methane. This leads to polar ice melting and rising sea levels.</p>
+                <p>The increase in Earth's temperature due to the rise in greenhouse gases such as carbon dioxide and methane. This leads to the melting of polar ice caps and rising sea levels.</p>
                 <p>Solutions to combat global warming:</p>
                 <ul>
                     <li>Using renewable energy.</li>
-                    <li>Increasing green cover.</li>
+                    <li>Increasing vegetation cover.</li>
                     <li>Reducing carbon emissions.</li>
                 </ul>
             `;
@@ -183,11 +184,11 @@ function showTopic(topic) {
         case 'solid-waste':
             info = `
                 <h3>Solid Waste Management</h3>
-                <p>Solid waste is one of the biggest environmental challenges. It includes household, industrial, and medical waste. If not disposed of properly, this waste can cause significant environmental pollution.</p>
+                <p>Solid waste is one of the biggest environmental challenges. It includes domestic, industrial, and medical waste. These wastes can cause severe environmental pollution if not disposed of properly.</p>
                 <p>Methods for solid waste management:</p>
                 <ul>
                     <li>Recycling.</li>
-                    <li>Converting waste to energy.</li>
+                    <li>Converting waste into energy.</li>
                     <li>Safe disposal in sanitary landfills.</li>
                 </ul>
             `;
@@ -195,7 +196,7 @@ function showTopic(topic) {
         case 'renewable-energy':
             info = `
                 <h3>Renewable Energy</h3>
-                <p>Renewable energy is a sustainable energy source that comes from natural sources like the sun, wind, and water. This energy helps reduce reliance on fossil fuels and decreases carbon emissions.</p>
+                <p>Renewable energy is a sustainable source of energy that comes from natural sources such as the sun, wind, and water. This energy helps reduce dependence on fossil fuels and decreases carbon emissions.</p>
                 <p>Types of renewable energy:</p>
                 <ul>
                     <li>Solar energy.</li>
@@ -217,7 +218,7 @@ function showTopic(topic) {
             `;
             break;
     }
-    content.innerHTML = `${info}<button onclick="showSection('training')">Back to Training Space</button>`;
+    content.innerHTML = `${info}<button class="btn btn-success btn-lg px-4 py-2" onclick="showSection('training')">Back to Training Space</button>`;
 }
 // Start the quiz
 function startQuiz(topic) {
@@ -238,11 +239,13 @@ function displayQuestion() {
         clearInterval(timerInterval);
     }
     content.innerHTML = `
-        <h3>${question.question}</h3>
+        <h3 style="color:black;">${question.question}</h3>
         ${shuffledOptions.map((option, index) => `
-            <button onclick="checkAnswer(${index}, ${correctAnswerIndex})">${option}</button>
+            <button class="btn btn-success btn-lg px-4 py-2" onclick="checkAnswer(${index}, ${correctAnswerIndex})">${option}</button>
         `).join('')}
-        <p>Time remaining: <span id="timer">20</span> seconds</p>
+
+        <h4><p>Time remaining: <span id="timer">20</span> seconds</p></h4>
+
     `;
     let timeLeft = 20;
     timerInterval = setInterval(() => {
@@ -269,7 +272,7 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
         content.innerHTML += `
             <p style="color: red;">Incorrect answer!</p>
             <p>The correct answer is: <strong>${question.options[question.correctAnswer]}</strong></p>
-            <button onclick="showTopicForRelearning('${question.topic}')">Review the topic</button>
+            <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopicForRelearning('${question.topic}')">Review the topic</button>
         `;
         wrongAnswers.push({
             question: question.question,
@@ -292,44 +295,44 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
 function endQuiz(score) {
     const content = document.getElementById('content');
     content.innerHTML = `
-        <h3>The quiz has ended!</h3>
+        <h3>The quiz is over!</h3>
         <p>Your score: ${score} out of ${questions.length}</p>
-        <button onclick="downloadCertificate()">Download Certificate (PDF)</button>
-        <button onclick="showWrongAnswers()">Show Incorrect Answers</button>
-        <button onclick="showSection('home')">Back to Home Page</button>
+        <button class="btn btn-success btn-lg px-4 py-2" onclick="downloadCertificate()">Download Certificate (PDF)</button>
+        <button class="btn btn-success btn-lg px-4 py-2" onclick="showWrongAnswers()">Show Incorrect Answers</button>
+       <br><br> <button class="btn btn-success btn-lg px-4 py-2" onclick="showSection('home')">Back to Home Page</button>
     `;
 }
 
-// Download certificate as a PDF file
+// Download the certificate in PDF format
 function downloadCertificate() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.setFontSize(20);
-    doc.text(`Certificate of Appreciation`, 80, 20);
+    doc.text(`Appreciation Certificate`, 80, 20);
     doc.setFontSize(14);
     doc.text(`Special congratulations to the student: ${userName}`, 20, 40);
     doc.text(`For successfully completing the quiz.`, 20, 50);
-    doc.text(`Number of points: ${userScore} out of ${questions.length}`, 20, 60);
+    doc.text(`Score: ${userScore} out of ${questions.length}`, 20, 60);
     doc.save(`${userName}-certificate.pdf`);
 }
 
-// Show incorrect answers
+// Display incorrect answers
 function showWrongAnswers() {
     const content = document.getElementById('content');
     let htmlContent = '<h3>Incorrect Answers:</h3>';
     wrongAnswers.forEach((answer, index) => {
         htmlContent += `
             <p><strong>Question:</strong> ${answer.question}</p>
-            <p><strong>Your Answer:</strong> ${answer.userAnswer}</p>
-            <p><strong>Correct Answer:</strong> ${answer.correctAnswer}</p>
-            <p><strong>Additional Information:</strong> ${answer.info}</p>
+            <p><strong>Your answer:</strong> ${answer.userAnswer}</p>
+            <p><strong>Correct answer:</strong> ${answer.correctAnswer}</p>
+            <p><strong>Additional information:</strong> ${answer.info}</p>
             <hr>
         `;
     });
     content.innerHTML = htmlContent;
 }
 
-// Shuffle array randomly
+// Shuffle the answers randomly
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -337,19 +340,20 @@ function shuffleArray(array) {
     }
     return array;
 }
-// The new questions and answers (10 questions per topic)
+
+// New questions and answers (10 questions per topic)
 function getQuestions(topic) {
     const questions = {
         air: [
             {
                 question: "What is the main source of air pollution?",
-                options: ["Burning fossil fuels", "Planting trees", "Natural winds", "Rain"],
+                options: ["The burning of fossil fuels", "Planting trees", "Natural winds", "Rain"],
                 correctAnswer: 0,
                 topic: 'air',
-                info: "Burning fossil fuels releases harmful gases like carbon dioxide."
+                info: "The burning of fossil fuels releases harmful gases such as carbon dioxide."
             },
             {
-                question: "Which gases cause air pollution?",
+                question: "Which gases are responsible for atmospheric pollution?",
                 options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
                 correctAnswer: 1,
                 topic: 'air',
@@ -360,11 +364,11 @@ function getQuestions(topic) {
                 options: ["Respiratory diseases", "Improved health", "Increased energy", "Improved vision"],
                 correctAnswer: 0,
                 topic: 'air',
-                info: "Air pollution causes diseases like asthma and allergies."
+                info: "Air pollution causes diseases such as asthma and allergies."
             },
             {
                 question: "What is the role of trees in reducing air pollution?",
-                options: ["Producing oxygen", "Releasing carbon dioxide", "Attracting dust", "Increasing humidity"],
+                options: ["Production of oxygen", "Emission of carbon dioxide", "Attraction of dust", "Increase in humidity"],
                 correctAnswer: 0,
                 topic: 'air',
                 info: "Trees absorb carbon dioxide and release oxygen."
@@ -374,68 +378,68 @@ function getQuestions(topic) {
                 options: ["China", "Canada", "Australia", "Japan"],
                 correctAnswer: 0,
                 topic: 'air',
-                info: "China is one of the biggest air polluters due to its industry."
+                info: "China is one of the countries that pollutes the air the most due to its industry."
             },
             {
                 question: "What is the impact of air pollution on agricultural crops?",
-                options: ["Increased production", "Crop damage", "Improved soil quality", "Increased rainfall"],
+                options: ["Increased production", "Crop deterioration", "Improved soil quality", "Increased rainfall"],
                 correctAnswer: 1,
                 topic: 'air',
                 info: "Air pollution destroys crops due to toxic substances."
             },
             {
-                question: "Which gases cause global warming?",
+                question: "Which gases are responsible for global warming?",
                 options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
                 correctAnswer: 1,
                 topic: 'air',
                 info: "Carbon dioxide is one of the main gases responsible for global warming."
             },
             {
-                question: "What are ways to reduce air pollution?",
-                options: ["Increasing factories", "Planting trees", "Burning waste", "Using plastic"],
+                question: "What are the methods to reduce air pollution?",
+                options: ["Increase factories", "Plant trees", "Burn waste", "Use plastic"],
                 correctAnswer: 1,
                 topic: 'air',
                 info: "Planting trees helps absorb carbon dioxide."
             },
             {
-                question: "What is the impact of air pollution on climate?",
-                options: ["Lower temperatures", "Climate change", "Increased rainfall", "Improved air quality"],
+                question: "What is the impact of air pollution on the climate?",
+                options: ["Drop in temperatures", "Climate change", "Increase in rainfall", "Improvement in air quality"],
                 correctAnswer: 1,
                 topic: 'air',
                 info: "Air pollution leads to climate change due to global warming."
             },
             {
                 question: "What is the main role of renewable energy in reducing air pollution?",
-                options: ["Increase pollution", "Reduce emissions", "Increase use of fossil fuels", "None of the above"],
+                options: ["Increase pollution", "Reduce emissions", "Increase the use of fossil fuels", "None of the above"],
                 correctAnswer: 1,
                 topic: 'air',
-                info: "Renewable energy reduces emissions of harmful gases."
+                info: "Renewable energy reduces the emission of harmful gases."
             }
         ],
         environment: [
             {
                 question: "What is environmental pollution?",
-                options: ["Increased plants", "Spread of waste", "Cleaning the environment", "Using renewable energy"],
+                options: ["Increase in plants", "Spread of waste", "Cleaning the environment", "Use of renewable energy"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "Environmental pollution occurs due to industrial waste and human activities."
+                info: "Environmental pollution is caused by industrial waste and human activities."
             },
             {
-                question: "What is the best way to reduce environmental pollution?",
-                options: ["Recycling", "Burning waste", "Dumping waste in the sea", "Increasing plastic use"],
+                question: "What is the best method to reduce environmental pollution?",
+                options: ["Recycling", "Incinerating waste", "Dumping waste in the sea", "Increasing plastic use"],
                 correctAnswer: 0,
                 topic: 'environment',
-                info: "Recycling reduces waste and improves the environment."
+                info: "Recycling reduces the amount of waste and improves the environment."
             },
             {
                 question: "What is the impact of environmental pollution on marine life?",
-                options: ["Increased fish", "Destruction of marine habitats", "Improved water quality", "Increased oxygen"],
+                options: ["Increase in fish", "Destruction of marine habitats", "Improvement in water quality", "Increase in oxygen"],
                 correctAnswer: 1,
                 topic: 'environment',
                 info: "Environmental pollution destroys marine habitats."
             },
             {
-                question: "What is the most common material polluting the environment?",
+                question: "Which material is most common in environmental pollution?",
                 options: ["Plastic", "Paper", "Glass", "Metals"],
                 correctAnswer: 0,
                 topic: 'environment',
@@ -443,65 +447,65 @@ function getQuestions(topic) {
             },
             {
                 question: "What is the main role of renewable energy in reducing environmental pollution?",
-                options: ["Increase pollution", "Reduce emissions", "Increase use of fossil fuels", "None of the above"],
+                options: ["Increase pollution", "Reduce emissions", "Increase the use of fossil fuels", "None of the above"],
                 correctAnswer: 1,
                 topic: 'environment',
                 info: "Renewable energy reduces carbon emissions."
             },
             {
                 question: "What is the impact of environmental pollution on soil?",
-                options: ["Increased fertility", "Soil degradation", "Improved soil quality", "Increased rainfall"],
+                options: ["Increase in fertility", "Soil degradation", "Improvement in soil quality", "Increase in rainfall"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "Environmental pollution leads to soil degradation due to chemicals."
+                info: "Environmental pollution degrades soil due to chemical substances."
             },
             {
-                question: "What is the best way to dispose of waste?",
-                options: ["Recycling", "Dumping waste in the sea", "Burning waste", "Increasing plastic use"],
+                question: "What is the best method to dispose of waste?",
+                options: ["Recycling", "Dumping waste in the sea", "Incinerating waste", "Increasing plastic use"],
                 correctAnswer: 0,
                 topic: 'environment',
-                info: "Recycling is the best way to dispose of waste."
+                info: "Recycling is the best method to dispose of waste."
             },
             {
                 question: "What is the impact of environmental pollution on public health?",
-                options: ["Improved health", "Increased diseases", "Increased energy", "Improved vision"],
+                options: ["Improvement in health", "Increase in diseases", "Increase in energy", "Improvement in vision"],
                 correctAnswer: 1,
                 topic: 'environment',
                 info: "Environmental pollution increases diseases like cancer and respiratory illnesses."
             },
             {
-                question: "What is the best way to conserve water?",
-                options: ["Neglecting cleanliness", "Reducing chemical use", "Increasing waste dumping", "Burning waste"],
+                question: "What is the best method to preserve water?",
+                options: ["Neglect cleanliness", "Reduce the use of chemicals", "Increase waste discharge", "Incinerate waste"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "Reducing chemical use helps conserve water."
+                info: "Reducing the use of chemicals helps preserve water."
             },
             {
                 question: "What is the impact of environmental pollution on the atmosphere?",
-                options: ["Improved air quality", "Increased air pollution", "Increased oxygen", "Improved visibility"],
+                options: ["Improvement in air quality", "Increase in air pollution", "Increase in oxygen", "Improvement in visibility"],
                 correctAnswer: 1,
                 topic: 'environment',
                 info: "Environmental pollution increases air pollution."
             }
         ],
-      water: [
-    {
-        question: "What are the sources of water pollution?",
-        options: ["Chemical waste", "Trees", "Air", "Soil"],
-        correctAnswer: 0,
-        topic: 'water',
-        info: "Chemical waste is one of the main sources of water pollution."
-    },
-    {
-        question: "What are the main effects of water pollution on human health?",
-        options: ["Spread of diseases", "Improved health", "Increased energy", "Improved water quality"],
-        correctAnswer: 0,
-        topic: 'water',
-        info: "Water pollution causes diseases such as cholera and typhoid."
-    },
+        water: [
+            {
+                question: "What are the sources of water pollution?",
+                options: ["Chemical waste", "Trees", "Air", "Soil"],
+                correctAnswer: 0,
+                topic: 'water',
+                info: "Chemical waste is one of the main sources of water pollution."
+            },
+            {
+                question: "What are the main effects of water pollution on human health?",
+                options: ["Spread of diseases", "Improvement in health", "Increase in energy", "Improvement in water quality"],
+                correctAnswer: 0,
+                topic: 'water',
+                info: "Water pollution causes diseases such as cholera and typhoid."
+            },
     {
         question: "What is the main role of oceans in the ecosystem?",
-        options: ["Climate regulation", "Air pollution", "Increased waste", "Reduced oxygen"],
+        options: ["Climate regulation", "Air pollution", "Increase in waste", "Reduction of oxygen"],
         correctAnswer: 0,
         topic: 'water',
         info: "Oceans play a key role in regulating the global climate."
@@ -514,122 +518,122 @@ function getQuestions(topic) {
         info: "Plastic is one of the most polluting materials for oceans."
     },
     {
-        question: "What is the best way to reduce water pollution?",
-        options: ["Reduce the use of chemicals", "Increase waste disposal", "Burn waste", "Neglect cleanliness"],
+        question: "What is the best method to reduce water pollution?",
+        options: ["Reduce the use of chemicals", "Increase waste discharge", "Burn waste", "Neglect hygiene"],
         correctAnswer: 0,
         topic: 'water',
-        info: "Reducing the use of chemicals helps to reduce water pollution."
+        info: "Reducing the use of chemicals helps reduce water pollution."
     },
     {
         question: "What is the impact of water pollution on marine life?",
-        options: ["Increased fish", "Destruction of marine habitats", "Improved water quality", "Increased oxygen"],
+        options: ["Increase in fish", "Destruction of marine habitats", "Improvement in water quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'water',
         info: "Water pollution leads to the destruction of marine habitats."
     },
     {
         question: "What is the impact of water pollution on agriculture?",
-        options: ["Increased crops", "Crop damage", "Improved soil quality", "Increased rainfall"],
+        options: ["Increase in crops", "Damage to crops", "Improvement in soil quality", "Increase in rainfall"],
         correctAnswer: 1,
         topic: 'water',
-        info: "Water pollution leads to crop damage."
+        info: "Water pollution damages agricultural crops."
     },
     {
         question: "What is the main role of rivers in the ecosystem?",
-        options: ["Providing water", "Air pollution", "Increased waste", "Reduced oxygen"],
+        options: ["Provide water", "Air pollution", "Increase in waste", "Reduction of oxygen"],
         correctAnswer: 0,
         topic: 'water',
-        info: "Rivers play a key role in providing water to ecosystems."
+        info: "Rivers play an essential role in providing water to ecosystems."
     },
     {
         question: "What is the impact of water pollution on seabirds?",
-        options: ["Increased bird numbers", "Destruction of bird habitats", "Improved water quality", "Increased oxygen"],
+        options: ["Increase in the number of birds", "Destruction of bird habitats", "Improvement in water quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'water',
-        info: "Water pollution leads to the destruction of seabird habitats."
+        info: "Water pollution destroys the habitats of seabirds."
     },
     {
-        question: "What is the best way to clean up the oceans?",
-        options: ["Neglect cleanliness", "Remove plastic waste", "Increase waste dumping", "Burn waste"],
+        question: "What is the best method to clean the oceans?",
+        options: ["Neglect hygiene", "Remove plastic waste", "Increase waste discharge", "Burn waste"],
         correctAnswer: 1,
         topic: 'water',
-        info: "Removing plastic waste is the best way to clean up the oceans."
+        info: "Removing plastic waste is the best method to clean the oceans."
     }
 ],
 warming: [
     {
         question: "What is global warming?",
-        options: ["Decrease in Earth's temperature", "Increase in Earth's temperature", "Air pollution", "Water pollution"],
+        options: ["Drop in Earth's temperature", "Rise in Earth's temperature", "Air pollution", "Water pollution"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Global warming is the rise in Earth's temperature due to increased greenhouse gases."
+        info: "Global warming is an increase in Earth's temperature due to the rise in greenhouse gases."
     },
     {
-        question: "What are the gases causing global warming?",
+        question: "Which gases are responsible for global warming?",
         options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Carbon dioxide is one of the main gases causing global warming."
+        info: "Carbon dioxide is one of the main gases responsible for global warming."
     },
     {
         question: "What are the main effects of global warming?",
-        options: ["Rise in sea level", "Decrease in temperature", "Increased polar ice", "Improved air quality"],
+        options: ["Rising sea levels", "Drop in temperatures", "Increase in polar ice", "Improvement in air quality"],
         correctAnswer: 0,
         topic: 'warming',
-        info: "Global warming causes a rise in sea level due to melting ice."
+        info: "Global warming causes rising sea levels due to the melting of ice."
     },
     {
-        question: "What is the main role of forests in mitigating global warming?",
-        options: ["Absorbing carbon dioxide", "Releasing carbon dioxide", "Air pollution", "Increasing temperature"],
+        question: "What is the main role of forests in combating global warming?",
+        options: ["Absorption of carbon dioxide", "Release of carbon dioxide", "Air pollution", "Increase in temperature"],
         correctAnswer: 0,
         topic: 'warming',
-        info: "Forests absorb carbon dioxide and help mitigate global warming."
+        info: "Forests absorb carbon dioxide and help limit global warming."
     },
     {
-        question: "What is the best way to mitigate global warming?",
-        options: ["Using renewable energy", "Increasing fossil fuel use", "Deforestation", "Neglecting waste"],
+        question: "What is the best method to combat global warming?",
+        options: ["Use of renewable energy", "Increase in the use of fossil fuels", "Destruction of forests", "Neglect of waste"],
         correctAnswer: 0,
         topic: 'warming',
-        info: "Using renewable energy helps reduce greenhouse gas emissions."
+        info: "The use of renewable energy helps reduce greenhouse gas emissions."
     },
     {
         question: "What is the impact of global warming on agriculture?",
-        options: ["Increased crops", "Crop damage", "Improved soil quality", "Increased rainfall"],
+        options: ["Increase in crops", "Damage to crops", "Improvement in soil quality", "Increase in rainfall"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Global warming leads to crop damage due to climate changes."
+        info: "Global warming damages crops due to climate changes."
     },
     {
-        question: "What is the impact of global warming on polar ice caps?",
-        options: ["Increased ice", "Melting ice", "Improved air quality", "Increased oxygen"],
+        question: "What is the impact of global warming on ice caps?",
+        options: ["Increase in ice", "Melting of ice", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Global warming leads to the melting of polar ice caps."
+        info: "Global warming leads to the melting of ice caps."
     },
     {
         question: "What is the impact of global warming on weather patterns?",
-        options: ["Stable weather", "Changes in weather", "Increased rainfall", "Improved weather"],
+        options: ["Climate stability", "Changes in climate", "Increase in rainfall", "Improvement in weather"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Global warming leads to changes in weather patterns."
+        info: "Global warming causes changes in weather patterns."
     },
     {
-        question: "What is the impact of global warming on animal species?",
-        options: ["Increased biodiversity", "Extinction of some species", "Improved air quality", "Increased oxygen"],
+        question: "What is the impact of global warming on animals?",
+        options: ["Increase in biodiversity", "Extinction of certain species", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Global warming leads to the extinction of some animal species."
+        info: "Global warming leads to the extinction of certain animal species."
     },
     {
-        question: "What is the best way to reduce greenhouse gas emissions?",
-        options: ["Increase industries", "Use renewable energy", "Deforestation", "Neglect waste"],
+        question: "What is the best method to reduce greenhouse gas emissions?",
+        options: ["Increase in industries", "Use of renewable energy", "Destruction of forests", "Neglect of waste"],
         correctAnswer: 1,
         topic: 'warming',
-        info: "Using renewable energy helps reduce greenhouse gas emissions."
+        info: "The use of renewable energy helps reduce greenhouse gas emissions."
     }
 ],
       "solid-waste": [
-    // The new questions for solid waste management (15 questions)
+    // New questions on solid waste management (15 questions)
     {
         question: "What are solid wastes?",
         options: ["Household waste", "Liquid waste", "Harmful gases", "Rain"],
@@ -638,43 +642,43 @@ warming: [
         info: "Solid waste includes household, industrial, and medical waste."
     },
     {
-        question: "What is the best way to manage solid waste?",
+        question: "What is the best method to manage solid waste?",
         options: ["Recycling", "Throwing waste in the streets", "Burning waste", "Leaving waste to decompose"],
         correctAnswer: 0,
         topic: 'solid-waste',
-        info: "Recycling is the best way to manage solid waste."
+        info: "Recycling is the best method to manage solid waste."
     },
     {
         question: "What is the impact of solid waste on the environment?",
-        options: ["Soil and water pollution", "Improved air quality", "Increased oxygen", "Increased rainfall"],
+        options: ["Soil and water pollution", "Improvement in air quality", "Increase in oxygen", "Increase in rainfall"],
         correctAnswer: 0,
         topic: 'solid-waste',
         info: "Solid waste causes soil and water pollution if not disposed of properly."
     },
     {
         question: "What is waste-to-energy technology?",
-        options: ["Recycling", "Composting", "Converting waste into electricity", "Leaving waste to decompose"],
+        options: ["Recycling", "Converting waste into compost", "Converting waste into electricity", "Leaving waste to decompose"],
         correctAnswer: 2,
         topic: 'solid-waste',
         info: "Waste-to-energy technology is used to convert waste into electricity."
     },
     {
         question: "What is the main role of sanitary landfills in waste management?",
-        options: ["Safe disposal of waste", "Increased pollution", "Improved air quality", "Increased rainfall"],
+        options: ["Safe disposal of waste", "Increase in pollution", "Improvement in air quality", "Increase in rainfall"],
         correctAnswer: 0,
         topic: 'solid-waste',
         info: "Sanitary landfills provide a safe method for disposing of solid waste."
     },
     {
         question: "What is the impact of electronic waste on the environment?",
-        options: ["Increased pollution", "Improved health", "Increased energy", "Improved visibility"],
+        options: ["Increase in pollution", "Improvement in health", "Increase in energy", "Improvement in visibility"],
         correctAnswer: 0,
         topic: 'solid-waste',
         info: "Electronic waste contains toxic substances that pollute the environment."
     },
     {
         question: "What are the benefits of recycling?",
-        options: ["Reduced waste", "Increased pollution", "Increased plastic use", "Increased production of harmful gases"],
+        options: ["Reduction of waste", "Increase in pollution", "Increase in plastic use", "Increase in production of harmful gases"],
         correctAnswer: 0,
         topic: 'solid-waste',
         info: "Recycling reduces the amount of waste and provides raw materials."
@@ -687,21 +691,21 @@ warming: [
         info: "Hazardous waste includes medical and chemical waste that requires safe disposal."
     },
     {
-        question: "What is the importance of sorting when disposing of waste?",
-        options: ["Increased pollution", "Easier recycling", "Increased waste", "Increased plastic use"],
+        question: "What is the importance of sorting during waste disposal?",
+        options: ["Increase in pollution", "Facilitation of recycling", "Increase in waste", "Increase in plastic use"],
         correctAnswer: 1,
         topic: 'solid-waste',
         info: "Sorting facilitates the recycling process and reduces waste."
     },
     {
         question: "What is the impact of solid waste on public health?",
-        options: ["Increased diseases", "Improved health", "Increased energy", "Improved visibility"],
+        options: ["Increase in diseases", "Improvement in health", "Increase in energy", "Improvement in visibility"],
         correctAnswer: 0,
         topic: 'solid-waste',
         info: "Solid waste causes diseases such as allergies and poisoning."
     },
     {
-        question: "What is organic waste?",
+        question: "What are organic wastes?",
         options: ["Household waste", "Food leftovers", "Electronic waste", "Medical waste"],
         correctAnswer: 1,
         topic: 'solid-waste',
@@ -709,107 +713,107 @@ warming: [
     },
     {
         question: "What is the role of compost in waste management?",
-        options: ["Turning organic waste into compost", "Increased pollution", "Improved air quality", "Increased rainfall"],
+        options: ["Transform organic waste into compost", "Increase pollution", "Improve air quality", "Increase rainfall"],
         correctAnswer: 0,
         topic: 'solid-waste',
-        info: "Compost turns organic waste into natural fertilizer."
+        info: "Compost transforms organic waste into natural fertilizer."
     },
     {
         question: "What are non-biodegradable wastes?",
         options: ["Plastic", "Food leftovers", "Paper", "Wood"],
         correctAnswer: 0,
         topic: 'solid-waste',
-        info: "Plastic is one of the most prominent non-biodegradable wastes."
+        info: "Plastic is one of the main non-biodegradable wastes."
     },
     {
         question: "What is the impact of solid waste on wildlife?",
-        options: ["Increased biodiversity", "Destruction of habitats", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in biodiversity", "Destruction of habitats", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'solid-waste',
         info: "Solid waste destroys the natural habitats of animals."
     },
     {
-        question: "What is the best way to dispose of electronic waste?",
+        question: "What is the best method to dispose of electronic waste?",
         options: ["Recycling", "Throwing it in the streets", "Burning it", "Leaving it to decompose"],
         correctAnswer: 0,
         topic: 'solid-waste',
-        info: "Recycling is the best way to dispose of electronic waste."
+        info: "Recycling is the best method to dispose of electronic waste."
     }
 ],
-      "renewable-energy": [
-    // The new questions for renewable energy (15 questions)
+  "renewable-energy": [
+    // New questions on renewable energy (15 questions)
     {
         question: "What is renewable energy?",
         options: ["Solar energy", "Fossil energy", "Nuclear energy", "Electromagnetic energy"],
         correctAnswer: 0,
         topic: 'renewable-energy',
-        info: "Renewable energy comes from natural sources like the sun, wind, and water."
+        info: "Renewable energy comes from natural sources such as the sun, wind, and water."
     },
     {
         question: "What is an example of renewable energy?",
-        options: ["Coal", "Wind", "Petroleum", "Natural gas"],
+        options: ["Coal", "Wind", "Oil", "Natural gas"],
         correctAnswer: 1,
         topic: 'renewable-energy',
-        info: "Wind is a renewable energy source that helps reduce carbon emissions."
+        info: "Wind is a source of renewable energy that helps reduce carbon emissions."
     },
     {
         question: "What are the benefits of using solar energy?",
-        options: ["Increased pollution", "Reduced carbon emissions", "Increased fossil fuel consumption", "None of the above"],
+        options: ["Increase in pollution", "Reduction in carbon emissions", "Increase in fossil fuel consumption", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
         info: "Solar energy reduces carbon emissions and is a clean energy source."
     },
     {
-        question: "What is the biggest obstacle to using renewable energy?",
+        question: "What is the main obstacle to using renewable energy?",
         options: ["High cost", "Excessive abundance", "Ease of use", "None of the above"],
         correctAnswer: 0,
         topic: 'renewable-energy',
-        info: "The high cost of building infrastructure is one of the main challenges."
+        info: "The high cost of creating infrastructure is one of the main challenges."
     },
     {
         question: "What is the energy produced by the movement of water?",
         options: ["Solar energy", "Wind energy", "Hydropower", "Thermal energy"],
         correctAnswer: 2,
         topic: 'renewable-energy',
-        info: "Hydropower is produced by the movement of water such as dams and rivers."
+        info: "Hydropower is produced by the movement of water, such as dams and rivers."
     },
     {
         question: "What are the benefits of using wind energy?",
-        options: ["Increased pollution", "Reduced carbon emissions", "Increased fossil fuel usage", "None of the above"],
+        options: ["Increase in pollution", "Reduction in carbon emissions", "Increase in fossil fuel usage", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
         info: "Wind energy reduces carbon emissions and is a clean energy source."
     },
     {
         question: "What is geothermal energy?",
-        options: ["Solar energy", "Energy extracted from the Earth's interior", "Wind energy", "Hydropower"],
+        options: ["Solar energy", "Energy extracted from underground", "Wind energy", "Hydropower"],
         correctAnswer: 1,
         topic: 'renewable-energy',
-        info: "Geothermal energy comes from the heat inside the Earth."
+        info: "Geothermal energy comes from the heat present in the Earth's subsurface."
     },
     {
         question: "What is the main role of renewable energy in reducing pollution?",
-        options: ["Increased pollution", "Reduced emissions", "Increased fossil fuel usage", "None of the above"],
+        options: ["Increase in pollution", "Reduction in emissions", "Increase in fossil fuel usage", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
         info: "Renewable energy reduces carbon emissions."
     },
     {
-        question: "Which country uses renewable energy the most?",
+        question: "Which country uses the most renewable energy?",
         options: ["China", "Canada", "Germany", "Japan"],
         correctAnswer: 0,
         topic: 'renewable-energy',
-        info: "China is one of the countries that uses renewable energy the most."
+        info: "China is one of the countries that uses the most renewable energy."
     },
     {
         question: "What is the impact of renewable energy on the economy?",
-        options: ["Increased unemployment", "Creation of new jobs", "Increased pollution", "None of the above"],
+        options: ["Increase in unemployment", "Creation of new jobs", "Increase in pollution", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
         info: "Renewable energy creates new jobs in various fields."
     },
     {
-        question: "What is tidal energy?",
+        question: "What is the energy that depends on tides?",
         options: ["Solar energy", "Wind energy", "Tidal energy", "Thermal energy"],
         correctAnswer: 2,
         topic: 'renewable-energy',
@@ -817,42 +821,42 @@ warming: [
     },
     {
         question: "What is the impact of renewable energy on the environment?",
-        options: ["Increased pollution", "Reduced pollution", "Increased fossil fuel usage", "None of the above"],
+        options: ["Increase in pollution", "Reduction in pollution", "Increase in fossil fuel usage", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
         info: "Renewable energy reduces environmental pollution."
     },
     {
-        question: "What is biomass energy?",
+        question: "What is the energy produced by biomass?",
         options: ["Solar energy", "Biomass energy", "Wind energy", "Hydropower"],
         correctAnswer: 1,
         topic: 'renewable-energy',
-        info: "Biomass energy is produced from organic materials like plants."
+        info: "Biomass energy is produced from organic materials such as plants."
     },
     {
         question: "What is the impact of renewable energy on energy security?",
-        options: ["Increased dependence on oil", "Reduced dependence on fossil fuels", "Increased pollution", "None of the above"],
+        options: ["Increase in oil dependency", "Reduction in dependency on fossil fuels", "Increase in pollution", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
-        info: "Renewable energy reduces dependence on fossil fuels."
+        info: "Renewable energy reduces dependency on fossil fuels."
     },
     {
-        question: "What is wave energy?",
+        question: "What is the energy produced by wave motion?",
         options: ["Solar energy", "Wind energy", "Wave energy", "Thermal energy"],
         correctAnswer: 2,
         topic: 'renewable-energy',
-        info: "Wave energy depends on the movement of waves."
+        info: "Wave energy depends on the motion of waves."
     },
     {
         question: "What is the impact of renewable energy on the climate?",
-        options: ["Increased emissions", "Reduced emissions", "Increased pollution", "None of the above"],
+        options: ["Increase in emissions", "Reduction in emissions", "Increase in pollution", "None of the above"],
         correctAnswer: 1,
         topic: 'renewable-energy',
-        info: "Renewable energy reduces harmful emissions affecting the climate."
+        info: "Renewable energy reduces harmful emissions for the climate."
     }
 ],
-      biodiversity: [
-    // The new questions on biodiversity (15 questions)
+    biodiversity: [
+    // New questions on biodiversity (15 questions)
     {
         question: "What is biodiversity?",
         options: ["The diversity of life on Earth", "The diversity of rocks", "The diversity of climates", "The diversity of colors"],
@@ -862,35 +866,35 @@ warming: [
     },
     {
         question: "What is the importance of biodiversity?",
-        options: ["Improving the economy", "Maintaining ecological balance", "Increasing pollution", "Increasing plastic use"],
+        options: ["Improvement of the economy", "Maintenance of ecological balance", "Increase in pollution", "Increase in plastic use"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Biodiversity plays a vital role in maintaining ecological balance."
     },
     {
-        question: "What are the biggest threats to biodiversity?",
-        options: ["Habitat destruction", "Tree planting", "Use of renewable energy", "Cleaning the environment"],
+        question: "What are the greatest threats to biodiversity?",
+        options: ["Destruction of habitats", "Planting trees", "Use of renewable energy", "Cleaning the environment"],
         correctAnswer: 0,
         topic: 'biodiversity',
-        info: "Habitat destruction is one of the biggest threats to biodiversity."
+        info: "Destruction of natural habitats is one of the greatest threats to biodiversity."
     },
     {
         question: "What is the main role of plants in biodiversity?",
-        options: ["Producing oxygen", "Increasing pollution", "Releasing carbon dioxide", "Reducing rainfall"],
+        options: ["Production of oxygen", "Increase in pollution", "Emission of carbon dioxide", "Reduction in rainfall"],
         correctAnswer: 0,
         topic: 'biodiversity',
-        info: "Plants play a key role in producing oxygen and maintaining ecological balance."
+        info: "Plants play an essential role in producing oxygen and maintaining ecological balance."
     },
     {
         question: "What is the impact of climate change on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Climate change leads to a decrease in biodiversity due to habitat destruction."
     },
     {
         question: "What is the impact of overfishing on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Overfishing leads to a decrease in biodiversity."
@@ -904,61 +908,61 @@ warming: [
     },
     {
         question: "What is the impact of excessive agriculture on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Excessive agriculture destroys natural habitats and reduces biodiversity."
     },
     {
         question: "What is the role of insects in biodiversity?",
-        options: ["Pollination", "Increasing pollution", "Releasing carbon dioxide", "Reducing rainfall"],
+        options: ["Pollination", "Increase in pollution", "Emission of carbon dioxide", "Reduction in rainfall"],
         correctAnswer: 0,
         topic: 'biodiversity',
         info: "Insects play a key role in pollination and food production."
     },
     {
         question: "What is the impact of forests on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 0,
         topic: 'biodiversity',
         info: "Forests provide natural habitats and preserve biodiversity."
     },
     {
         question: "What is the impact of urbanization on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Urbanization leads to the destruction of natural habitats and a decrease in biodiversity."
     },
     {
         question: "What is the impact of pollution on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Pollution destroys natural habitats and reduces biodiversity."
     },
     {
         question: "What is the impact of tourism on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Excessive tourism destroys natural habitats and reduces biodiversity."
     },
     {
         question: "What is the impact of forest fires on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
-        info: "Forest fires destroy natural habitats and reduce biodiversity."
+        info: "Fires destroy natural habitats and reduce biodiversity."
     },
     {
         question: "What is the impact of wars on biodiversity?",
-        options: ["Increased diversity", "Decreased diversity", "Improved air quality", "Increased oxygen"],
+        options: ["Increase in diversity", "Decrease in diversity", "Improvement in air quality", "Increase in oxygen"],
         correctAnswer: 1,
         topic: 'biodiversity',
         info: "Wars destroy natural habitats and reduce biodiversity."
-    }
-]
+     }
+],
          };
     return questions[topic] || [];
 }

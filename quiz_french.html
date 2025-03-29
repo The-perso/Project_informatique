@@ -37,54 +37,54 @@
   <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="AgriCulture">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul> 
-            <li><a style="color:white; " href="quiz_arabic.html" class="btn btn-success btn-lg px-4 py-2">🚀 اجتز المسابقة </a></li>
-            <li><a href="testimonials_arabic.html">اراء المشاركين</a></li>
-            <li><a href="about_arabic.html">معلومات عن المسابقة </a></li>
-            <li><a href="index_arabic.html" class="active"> الصفحة الرئيسية  </a></li>
+        <ul>
+            <li><a href="index_french.html" class="active"> Acceuil </a></li>
+            <li><a href="about_french.html">A propos de Quiz </a></li>
+            <li><a href="testimonials_french.html">Témoignages des participants</a></li>
+            <li><a style="color:white; " href="quiz_french.html" class="btn btn-success btn-lg px-4 py-2">🚀 passez le quiz </a></li>
           
          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-<a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.jpg" alt="AgriCulture">
-        <!-- <h1 class="sitename">AgriCulture</h1>  -->
-      </a>
+
     </div>
   </header>
   <main class="main">
-    <button id="redirectButtonfrancais" class="btn btn-success btn-lg px-8 py-2">الفرنسية </button>
+    <button id="redirectButtonfrancais" class="btn btn-success btn-lg px-8 py-2">français</button>
 
     <script src="script_bouton_francais.js"></script> <!-- Lien vers le fichier JavaScript francais-->
 
     
     
-    <button id="redirectButtonarabe" class="btn btn-success btn-lg px-4 py-2">العربية</button>
+    <button id="redirectButtonarabe" class="btn btn-success btn-lg px-4 py-2">arabe</button>
 
     <script src="script_bouton_arabe.js"></script> 
 
 
      
-    <button id="redirectButtonanglais" class="btn btn-success btn-lg px-4 py-2">الانجليزية</button>
+     <button id="redirectButtonanglais"  class="btn btn-success btn-lg px-4 py-2">anglais</button>
 
     <script src="script_bouton_anglais.js"></script> 
    
     <!-- Écran d'accueil -->
     <div id="welcome-screen" class="screen">
-       
-        <h1 class="welcome-title">مرحبًا بك في المسابقة الثقافية البيئية</h1>
-        <p class="welcome-subtitle">التي ينظمها نادي البيئة لمؤسسة علال بن عبد الله</p>
+        
+        <h1 class="welcome-title">Bienvenue au quiz culturel environnemental</h1>
+        <p class="welcome-subtitle">Organisé par le Club Environnemental de l'Institution Allal Ben Abdllah</p>
         <form id="user-info-form" class="welcome-form">
-            <input type="text" id="name" placeholder="الاسم الكامل" required>
-            <input type="number" id="age" placeholder="السن " required>
-            <input type="text" id="school" placeholder=" المؤسسة " required>
-            <p class="welcome-note">ملاحظة: يجب عليك إدخال جميع المعلومات لبدء المسابقة.</p>
-            <button type="submit" class="btn btn-success btn-lg px-4 py-2">بدء المسابقة</button>
+            <input type="text" id="name" placeholder="Nom et prénom" required>
+            <input type="number" id="age" placeholder="Âge" required>
+            <input type="text" id="school" placeholder="Établissement scolaire" required>
+            <p class="welcome-note">Note : Vous devez remplir toutes les informations pour commencer le quiz.</p>
+            <button type="submit" class="btn btn-success btn-lg px-4 py-2">Commencer le quiz</button>
         </form>
     </div>
 
@@ -94,10 +94,10 @@
             <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Logo de l'institution" class="logo institution-logo">
         </header>
         <nav class="main-nav">
-            <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">الصفحة الرئيسية</button>
-            <button onclick="showSection('training')" class="btn btn-success btn-lg px-4 py-2">فضاء التكوين</button>
-            <button onclick="showSection('about')" class="btn btn-success btn-lg px-4 py-2">حول المسابقة</button>
-            <button onclick="showSection('participate')" class="btn btn-success btn-lg px-4 py-2">المشاركة في المسابقة</button>
+            <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">Accueil</button>
+            <button onclick="showSection('training')" class="btn btn-success btn-lg px-4 py-2">Espace de formation</button>
+            <button onclick="showSection('about_french')" class="btn btn-success btn-lg px-4 py-2">À propos du quiz</button>
+            <button onclick="showSection('participate')" class="btn btn-success btn-lg px-4 py-2">Participer au quiz</button>
         </nav>
       <br><br><br><br><br><br><br><br><br>
         <div id="content" class="content-section">
@@ -106,27 +106,27 @@
 
         <!-- Section des développeurs (apparaît uniquement sur l'écran principal) -->
         <div id="developers-section" class="developers-section" style="display: none;">
-            <h3 class="developers-title">المطورين: :</h3>
-            <p class="developer-name">سلمان العمارتي</p>
-            <p class="developer-name">رياض بوسيفي</p>
-            <p class="developer-supervisor">تحت إشراف: <strong>الأستاذ أنس جروندي</strong></p>
+            <h3 class="developers-title">Développeurs :</h3>
+            <p class="developer-name">Salman Al-Amarti</p>
+            <p class="developer-name">Riyad Boussifi</p>
+            <p class="developer-supervisor">Sous la supervision de : <strong>Professeur Anas Jroundi</strong></p>
         </div>
     </div>
 
     <!-- Certificat d'appréciation -->
     <div id="certificate" class="screen" style="display:none;">
-        <h1 class="certificate-title">هنيئًا لك  <span id="certificate-name"></span> !</h1>
-        <p class="certificate-message">لقد اجتزت المسابقة بنجاح وكنت من بين الأفضل!</p>
+        <h1 class="certificate-title">Félicitations <span id="certificate-name"></span> !</h1>
+        <p class="certificate-message">Vous avez réussi le quiz avec succès et fait partie des meilleurs !</p>
         <img src="https://i.postimg.cc/LXjRTcym/logo-allal-removebg-preview.png" alt="Logo de l'institution" class="logo institution-logo" style="height: 80px;">
         <img src="https://i.postimg.cc/8CvJyQ6Z/environment-club-logo.png" alt="Logo du Club Environnemental" class="logo club-logo" style="height: 80px;">
-        <button onclick="downloadCertificate()" class="btn btn-success btn-lg px-4 py-2">تحميل الشهادة</button>
-        <button onclick="showWrongAnswers()" class="btn btn-success btn-lg px-4 py-2">عرض الإجابات الخاطئة</button>
-        <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">العودة إلى الصفحة الرئيسية</button>
+        <button onclick="downloadCertificate()" class="btn btn-success btn-lg px-4 py-2">Télécharger le certificat</button>
+        <button onclick="showWrongAnswers()" class="btn btn-success btn-lg px-4 py-2">Afficher les mauvaises réponses</button>
+        <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2">Retour à la page d'accueil</button>
         <!-- Section des développeurs (apparaît uniquement sur la page de fin) -->
         <div id="developers-section-end" class="developers-section">
-            <h3 class="developers-title">المطورين:</h3>
-            <p class="developer-name">سلمان العمارتي</p>
-             <p class="developer-supervisor">تحت إشراف: <strong>الأستاذ أنس جروندي</strong></p>
+            <h3 class="developers-title">Développeurs :</h3>
+            <p class="developer-name">Salman Al-Amarti</p>
+            <p class="developer-supervisor">Sous la supervision de : <strong>Professeur Anas Jroundi</strong></p>
         </div>
     </div>
  <footer id="footer" class="footer dark-background">
@@ -164,7 +164,8 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-    <script src="script_arabic.js"></script> 
+    
+    <script src="script_french.js"></script>
 
 
 

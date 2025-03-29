@@ -7,7 +7,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let timerInterval;
 let wrongAnswers = [];
-// الانتقال من واجهة الترحيب إلى الواجهة الرئيسية
+// الانتقال من شاشة الترحيب إلى القائمة الرئيسية
 document.getElementById('user-info-form').onsubmit = function(event) {
     event.preventDefault();
     userName = document.getElementById('name').value;
@@ -24,57 +24,56 @@ function showSection(sectionId) {
     let htmlContent = '';
     switch (sectionId) {
         case 'home':
-            htmlContent = '<p>مرحبًا بك في الصفحة الرئيسية.</p>';
+            htmlContent = '<p>مرحبًا بكم في الصفحة الرئيسية.</p>';
             developersSection.style.display = 'block';
             break;
         case 'training':
             htmlContent = `
-                <h2>فضاء التكوين</h2>
-                <button onclick="showTopic('air')">تلوث الهواء</button>
-                <button onclick="showTopic('environment')">التلوث البيئي</button>
-                <button onclick="showTopic('water')">تلوث المياه والمحيطات</button>
-                <button onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <button onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <button onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <button onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <h2>مساحة التدريب</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button><br><br>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
         case 'about':
             htmlContent = `
-                <h2>حول المسابقة</h2>
-                <p>تعريف البرنامج هو لعبة تتكون من عدة أسئلة كل سؤال له أربعة خيارات.</p>
-                <p>شروط المشاركة: التوفر على هاتف أو حاسوب والدخول للموقع المخصص لنادي البيئة للمؤسسة.</p>
-                <p>الهدف من البرنامج: تمكين جميع التلميذات والتلاميذ من اجتياز مسابقة علال بن عبد الله للبيئة وتشجيع التلاميذ على استعمال الوسائل التكنولوجية الحديثة فيما هو تعليمي ومفيد للبيئة.</p>
+                <h2>حول الاختبار</h2>
+                <p>البرنامج عبارة عن لعبة تتكون من عدة أسئلة، لكل منها أربعة خيارات.</p>
+                <p>شروط المشاركة: امتلاك هاتف أو جهاز كمبيوتر والوصول إلى الموقع المخصص لنادي البيئة التابع للمؤسسة.</p>
+                <p>هدف البرنامج: تمكين جميع الطلاب من اجتياز اختبار البيئة "Allal Bin Abdullah" وتشجيع الطلاب على استخدام التكنولوجيا الحديثة لأغراض تعليمية ومفيدة للبيئة.</p>
             `;
             developersSection.style.display = 'none';
             break;
         case 'participate':
             htmlContent = `
-                <h2>المشاركة في المسابقة</h2>
-                <button onclick="startQuiz('air')">تلوث الهواء</button>
-                <button onclick="startQuiz('environment')">التلوث البيئي</button>
-                <button onclick="startQuiz('water')">تلوث المياه والمحيطات</button>
-                <br><br><button onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <button onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <button onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <button onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <h2>المشاركة في الاختبار</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
-            // إضافة قسم العبارات التحسيسية
+            // إضافة قسم الرسائل التوعوية
             const awarenessMessages = `
     <div id="awareness-messages" class="awareness-section">
-        <h3 class="awareness-title">رسائل تحسيسية</h3>
-        <p class="awareness-message">"البيئة هي ميراثنا المشترك، فلنحافظ عليها للأجيال القادمة."</p>
-        <p class="awareness-message">"كل قطرة ماء تُهدر اليوم قد تكون غالية غدًا."</p>
-        <p class="awareness-message">"زراعة شجرة واحدة يمكن أن تصنع فرقًا كبيرًا."</p>
-        <p class="awareness-message">"التلوث مشكلة الجميع، والحل يبدأ منك."</p>
+        <h3 class="awareness-title">رسائل توعوية</h3>
+        <p class="awareness-message">"البيئة هي تراثنا المشترك، دعونا نحافظ عليها للأجيال القادمة."</p>
+        <p class="awareness-message">"كل قطرة ماء تُهدر اليوم قد تكون ثمينة غدًا."</p>
+        <p class="awareness-message">"زراعة شجرة يمكن أن تحدث فرقًا كبيرًا."</p>
+        <p class="awareness-message">"التلوث مشكلة الجميع، والحل يبدأ بك."</p>
         <p class="awareness-message">"الطبيعة لا تحتاجنا، لكننا نحتاج الطبيعة."</p>
     </div>
 `;
-
-            // تعديل وظيفة showSection لإظهار الرسائل التحسيسية فقط في الصفحة الرئيسية
+            // تعديل دالة showSection لعرض الرسائل التوعوية فقط في الصفحة الرئيسية
             function showSection(sectionId) {
                 const content = document.getElementById('content');
                 const developersSection = document.getElementById('developers-section');
@@ -82,43 +81,43 @@ function showSection(sectionId) {
 
                 switch (sectionId) {
                     case 'home':
-                        htmlContent = '<p>مرحبًا بك في الصفحة الرئيسية.</p>';
-                        // إضافة الرسائل التحسيسية فقط في الصفحة الرئيسية
+                        htmlContent = '<p>مرحبًا بكم في الصفحة الرئيسية.</p>';
+                        // إضافة الرسائل التوعوية فقط في الصفحة الرئيسية
                         htmlContent += awarenessMessages;
                         developersSection.style.display = 'block';
                         break;
                     case 'training':
                         htmlContent = `
-                <h2>فضاء التكوين</h2>
-                <button onclick="showTopic('air')">تلوث الهواء</button>
-                <button onclick="showTopic('environment')">التلوث البيئي</button>
-                <button onclick="showTopic('water')">تلوث المياه والمحيطات</button>
-                <button onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <button onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <button onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <button onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <h2>مساحة التدريب</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
                     case 'about':
                         htmlContent = `
-                <h2>حول المسابقة</h2>
-                <p>تعريف البرنامج هو لعبة تتكون من عدة أسئلة كل سؤال له أربعة خيارات.</p>
-                <p>شروط المشاركة: التوفر على هاتف أو حاسوب والدخول للموقع المخصص لنادي البيئة للمؤسسة.</p>
-                <p>الهدف من البرنامج: تمكين جميع التلميذات والتلاميذ من اجتياز مسابقة علال بن عبد الله للبيئة وتشجيع التلاميذ على استعمال الوسائل التكنولوجية الحديثة فيما هو تعليمي ومفيد للبيئة.</p>
+                <h2>حول الاختبار</h2>
+                <p>البرنامج عبارة عن لعبة تتكون من عدة أسئلة، لكل منها أربعة خيارات.</p>
+                <p>شروط المشاركة: امتلاك هاتف أو جهاز كمبيوتر والوصول إلى الموقع المخصص لنادي البيئة التابع للمؤسسة.</p>
+                <p>هدف البرنامج: تمكين جميع الطلاب من اجتياز اختبار البيئة "Allal Bin Abdullah" وتشجيع الطلاب على استخدام التكنولوجيا الحديثة لأغراض تعليمية ومفيدة للبيئة.</p>
             `;
                         developersSection.style.display = 'none';
                         break;
                     case 'participate':
                         htmlContent = `
-                <h2>المشاركة في المسابقة</h2>
-                <button onclick="startQuiz('air')">تلوث الهواء</button>
-                <button onclick="startQuiz('environment')">التلوث البيئي</button>
-                <button onclick="startQuiz('water')">تلوث المياه والمحيطات</button>
-                <button onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <button onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <button onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <button onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <h2>المشاركة في الاختبار</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -136,11 +135,11 @@ function showTopic(topic) {
         case 'air':
             info = `
                 <h3>تلوث الهواء</h3>
-                <p>تلوث الهواء يحدث بسبب انبعاث الغازات الضارة من السيارات والمصانع. هذه الغازات تشمل ثاني أكسيد الكربون وأكاسيد النيتروجين التي تسبب أمراضًا خطيرة مثل الربو والحساسية.</p>
-                <p>يمكن الحد من تلوث الهواء عن طريق:</p>
+                <p>تلوث الهواء ناتج عن انبعاث الغازات الضارة من السيارات والمصانع. هذه الغازات تشمل ثاني أكسيد الكربون وأكاسيد النيتروجين، والتي تسبب أمراضًا خطيرة مثل الربو والحساسية.</p>
+                <p>يمكننا تقليل تلوث الهواء من خلال:</p>
                 <ul>
                     <li>زراعة المزيد من الأشجار.</li>
-                    <li>استخدام الطاقة المتجددة.</li>
+                    <li>استخدام الطاقات المتجددة.</li>
                     <li>تحسين كفاءة المحركات.</li>
                 </ul>
             `;
@@ -148,36 +147,36 @@ function showTopic(topic) {
         case 'environment':
             info = `
                 <h3>التلوث البيئي</h3>
-                <p>يشمل التلوث البيئي تلوث الهواء والماء والتربة. ينتج هذا التلوث عن الأنشطة البشرية مثل الصناعة وإلقاء النفايات بشكل غير صحيح.</p>
-                <p>طرق الحد من التلوث البيئي:</p>
+                <p>التلوث البيئي يشمل تلوث الهواء والماء والتربة. هذا التلوث ناتج عن الأنشطة البشرية مثل الصناعة والتخلص غير الصحيح من النفايات.</p>
+                <p>طرق لتقليل التلوث البيئي:</p>
                 <ul>
-                    <li>إعادة التدوير.</li>
+                    <li>التدوير.</li>
                     <li>تقليل استخدام البلاستيك.</li>
-                    <li>الاعتماد على الطاقة النظيفة.</li>
+                    <li>اعتماد الطاقات النظيفة.</li>
                 </ul>
             `;
             break;
         case 'water':
             info = `
-                <h3>تلوث المياه والمحيطات</h3>
-                <p>يحدث بسبب إلقاء النفايات الكيميائية والنفطية في المسطحات المائية. يؤدي ذلك إلى تدمير الموائل البحرية وانتشار الأمراض.</p>
-                <p>حلول لتلوث المياه:</p>
+                <h3>تلوث الماء والبحار</h3>
+                <p>يحدث ذلك بسبب تصريف النفايات الكيميائية والنفطية في المياه. يؤدي ذلك إلى تدمير الموائل البحرية وانتشار الأمراض.</p>
+                <p>حلول لتلوث الماء:</p>
                 <ul>
                     <li>معالجة المياه قبل تصريفها.</li>
                     <li>التخلص الآمن من النفايات الصناعية.</li>
-                    <li>تنظيف الشواطئ والمحيطات.</li>
+                    <li>تنظيف الشواطئ والبحار.</li>
                 </ul>
             `;
             break;
         case 'warming':
             info = `
                 <h3>الاحتباس الحراري</h3>
-                <p>ارتفاع درجة حرارة الأرض بسبب زيادة غازات الدفيئة مثل ثاني أكسيد الكربون والميثان. يؤدي ذلك إلى ذوبان الجليد القطبي وارتفاع مستوى سطح البحر.</p>
-                <p>حلول لمواجهة الاحتباس الحراري:</p>
+                <p>زيادة درجة حرارة الأرض بسبب زيادة غازات الاحتباس الحراري مثل ثاني أكسيد الكربون والميثان. يؤدي ذلك إلى ذوبان الجليد القطبي وارتفاع مستوى سطح البحر.</p>
+                <p>حلول لمكافحة الاحتباس الحراري:</p>
                 <ul>
-                    <li>استخدام الطاقة المتجددة.</li>
-                    <li>زيادة الغطاء الأخضر.</li>
-                    <li>تقليل الانبعاثات الكربونية.</li>
+                    <li>استخدام الطاقات المتجددة.</li>
+                    <li>زيادة الغطاء النباتي.</li>
+                    <li>تقليل انبعاثات الكربون.</li>
                 </ul>
             `;
             break;
@@ -187,7 +186,7 @@ function showTopic(topic) {
                 <p>النفايات الصلبة هي واحدة من أكبر التحديات البيئية. تشمل النفايات المنزلية والصناعية والطبية. يمكن أن تسبب هذه النفايات تلوثًا بيئيًا خطيرًا إذا لم يتم التخلص منها بشكل صحيح.</p>
                 <p>طرق إدارة النفايات الصلبة:</p>
                 <ul>
-                    <li>إعادة التدوير.</li>
+                    <li>التدوير.</li>
                     <li>تحويل النفايات إلى طاقة.</li>
                     <li>التخلص الآمن في مكبات صحية.</li>
                 </ul>
@@ -196,7 +195,7 @@ function showTopic(topic) {
         case 'renewable-energy':
             info = `
                 <h3>الطاقة المتجددة</h3>
-                <p>الطاقة المتجددة هي مصدر مستدام للطاقة يأتي من مصادر طبيعية مثل الشمس والرياح والماء. تساعد هذه الطاقة في تقليل الاعتماد على الوقود الأحفوري وتقليل الانبعاثات الكربونية.</p>
+                <p>الطاقة المتجددة هي مصدر مستدام للطاقة يأتي من المصادر الطبيعية مثل الشمس والرياح والماء. هذه الطاقة تساعد في تقليل الاعتماد على الوقود الأحفوري وتقليل انبعاثات الكربون.</p>
                 <p>أنواع الطاقة المتجددة:</p>
                 <ul>
                     <li>الطاقة الشمسية.</li>
@@ -208,19 +207,19 @@ function showTopic(topic) {
         case 'biodiversity':
             info = `
                 <h3>التنوع البيولوجي</h3>
-                <p>التنوع البيولوجي يشير إلى تنوع الحياة على الأرض، بما في ذلك النباتات والحيوانات والنظم البيئية. يلعب التنوع البيولوجي دورًا حيويًا في الحفاظ على التوازن البيئي.</p>
+                <p>التنوع البيولوجي يشير إلى تنوع الحياة على الأرض، بما في ذلك النباتات والحيوانات والنظم الإيكولوجية. يلعب التنوع البيولوجي دورًا حيويًا في الحفاظ على التوازن البيئي.</p>
                 <p>أسباب فقدان التنوع البيولوجي:</p>
                 <ul>
                     <li>تدمير الموائل الطبيعية.</li>
                     <li>التلوث البيئي.</li>
-                    <li>التغير المناخي.</li>
+                    <li>تغير المناخ.</li>
                 </ul>
             `;
             break;
     }
-    content.innerHTML = `${info}<button onclick="showSection('training')">العودة إلى فضاء التكوين</button>`;
+    content.innerHTML = `${info}<button class="btn btn-success btn-lg px-4 py-2" onclick="showSection('training')">العودة إلى مساحة التدريب</button>`;
 }
-// بدء المسابقة
+// بدء الاختبار
 function startQuiz(topic) {
     questions = getQuestions(topic);
     currentQuestionIndex = 0;
@@ -239,11 +238,13 @@ function displayQuestion() {
         clearInterval(timerInterval);
     }
     content.innerHTML = `
-        <h3>${question.question}</h3>
+        <h3 style="color:black;">${question.question}</h3>
         ${shuffledOptions.map((option, index) => `
-            <button onclick="checkAnswer(${index}, ${correctAnswerIndex})">${option}</button>
+            <button class="btn btn-success btn-lg px-4 py-2" onclick="checkAnswer(${index}, ${correctAnswerIndex})">${option}</button>
         `).join('')}
-        <p>الوقت المتبقي: <span id="timer">20</span> ثانية</p>
+
+        <h4><p>الوقت المتبقي: <span id="timer">20</span> ثانية</p></h4>
+
     `;
     let timeLeft = 20;
     timerInterval = setInterval(() => {
@@ -251,7 +252,7 @@ function displayQuestion() {
         document.getElementById('timer').innerText = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            checkAnswer(-1, correctAnswerIndex); // الإجابة انتهت بسبب انتهاء الوقت
+            checkAnswer(-1, correctAnswerIndex); // انتهاء الوقت دون إجابة
         }
     }, 1000);
 }
@@ -270,11 +271,11 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
         content.innerHTML += `
             <p style="color: red;">إجابة خاطئة!</p>
             <p>الإجابة الصحيحة هي: <strong>${question.options[question.correctAnswer]}</strong></p>
-            <button onclick="showTopicForRelearning('${question.topic}')">إعادة التكوين</button>
+            <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopicForRelearning('${question.topic}')">مراجعة الموضوع</button>
         `;
         wrongAnswers.push({
             question: question.question,
-            userAnswer: selectedIndex !== -1 ? question.options[selectedIndex] : "لم تجب",
+            userAnswer: selectedIndex !== -1 ? question.options[selectedIndex] : "لا يوجد إجابة",
             correctAnswer: question.options[question.correctAnswer],
             info: question.info
         });
@@ -289,28 +290,27 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
     }, 2000);
 }
 
-// إنهاء المسابقة
+// إنهاء الاختبار
 function endQuiz(score) {
     const content = document.getElementById('content');
     content.innerHTML = `
-        <h3>انتهت المسابقة!</h3>
-        <p>نقاطك: ${score} من ${questions.length}</p>
-        <button onclick="downloadCertificate()">تحميل الشهادة (PDF)</button>
-        <button onclick="showWrongAnswers()">عرض الإجابات الخاطئة</button>
-        <button onclick="showSection('home')">العودة إلى الصفحة الرئيسية</button>
+        <h3>انتهى الاختبار!</h3>
+        <p>نتيجتك: ${score} من أصل ${questions.length}</p>
+        <button class="btn btn-success btn-lg px-4 py-2" onclick="downloadCertificate()">تنزيل الشهادة (PDF)</button>
+        <button class="btn btn-success btn-lg px-4 py-2" onclick="showWrongAnswers()">عرض الإجابات الخاطئة</button>
+       <br><br> <button class="btn btn-success btn-lg px-4 py-2" onclick="showSection('home')">العودة إلى الصفحة الرئيسية</button>
     `;
 }
-
-// تحميل الشهادة كملف PDF
+// تحميل الشهادة بصيغة PDF
 function downloadCertificate() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.setFontSize(20);
     doc.text(`شهادة تقدير`, 80, 20);
     doc.setFontSize(14);
-    doc.text(`تهنئة خاصة للطالب/ة: ${userName}`, 20, 40);
-    doc.text(`على إتمام المسابقة بنجاح.`, 20, 50);
-    doc.text(`عدد النقاط: ${userScore} من ${questions.length}`, 20, 60);
+    doc.text(`تهانينا الخاصة للطالب/الطالبة: ${userName}`, 20, 40);
+    doc.text(`لإكمالك الاختبار بنجاح.`, 20, 50);
+    doc.text(`عدد النقاط: ${userScore} من أصل ${questions.length}`, 20, 60);
     doc.save(`${userName}-certificate.pdf`);
 }
 
@@ -330,7 +330,7 @@ function showWrongAnswers() {
     content.innerHTML = htmlContent;
 }
 
-// ترتيب الإجابات بشكل عشوائي
+// خلط الإجابات بشكل عشوائي
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -338,20 +338,19 @@ function shuffleArray(array) {
     }
     return array;
 }
-
-// الأسئلة والأجوبة الجديدة (10 أسئلة لكل موضوع)
+// الأسئلة والإجابات الجديدة (10 أسئلة لكل موضوع)
 function getQuestions(topic) {
     const questions = {
         air: [
             {
-                question: "ما هو المصدر الرئيسي لتلوث الهواء؟",
+                question: "ما هي المصدر الرئيسي لتلوث الهواء؟",
                 options: ["حرق الوقود الأحفوري", "زراعة الأشجار", "الرياح الطبيعية", "الأمطار"],
                 correctAnswer: 0,
                 topic: 'air',
                 info: "حرق الوقود الأحفوري يطلق غازات ضارة مثل ثاني أكسيد الكربون."
             },
             {
-                question: "ما هي الغازات المسببة للتلوث الجوي؟",
+                question: "ما هي الغازات المسؤولة عن تلوث الهواء؟",
                 options: ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"],
                 correctAnswer: 1,
                 topic: 'air',
@@ -359,110 +358,110 @@ function getQuestions(topic) {
             },
             {
                 question: "ما هي الآثار الصحية لتلوث الهواء؟",
-                options: ["أمراض الجهاز التنفسي", "تحسين الصحة", "زيادة الطاقة", "تحسين الرؤية"],
+                options: ["أمراض الجهاز التنفسي", "تحسين الصحة", "زيادة الطاقة", "تحسين البصر"],
                 correctAnswer: 0,
                 topic: 'air',
                 info: "تلوث الهواء يسبب أمراضًا مثل الربو والحساسية."
             },
             {
                 question: "ما هو دور الأشجار في تقليل تلوث الهواء؟",
-                options: ["إنتاج الأكسجين", "إطلاق ثاني أكسيد الكربون", "جذب الغبار", "زيادة الرطوبة"],
+                options: ["إنتاج الأكسجين", "انبعاث ثاني أكسيد الكربون", "جذب الغبار", "زيادة الرطوبة"],
                 correctAnswer: 0,
                 topic: 'air',
-                info: "الأشجار تمتص ثاني أكسيد الكربون وتطلق الأكسجين."
+                info: "تمتص الأشجار ثاني أكسيد الكربون وتطلق الأكسجين."
             },
             {
-                question: "ما هي أكثر الدول تلويثًا للهواء؟",
+                question: "ما هو البلد الذي يلوث الهواء أكثر؟",
                 options: ["الصين", "كندا", "أستراليا", "اليابان"],
                 correctAnswer: 0,
                 topic: 'air',
-                info: "الصين واحدة من أكثر الدول تلويثًا للهواء بسبب الصناعة."
+                info: "الصين هي واحدة من الدول التي تلوث الهواء بسبب صناعتها."
             },
             {
                 question: "ما هو تأثير تلوث الهواء على المحاصيل الزراعية؟",
-                options: ["زيادة الإنتاج", "تلف المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
+                options: ["زيادة الإنتاج", "تدهور المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
                 correctAnswer: 1,
                 topic: 'air',
                 info: "تلوث الهواء يدمر المحاصيل بسبب المواد السامة."
             },
             {
-                question: "ما هي الغازات التي تسبب الاحتباس الحراري؟",
+                question: "ما هي الغازات المسؤولة عن الاحتباس الحراري؟",
                 options: ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"],
                 correctAnswer: 1,
                 topic: 'air',
-                info: "ثاني أكسيد الكربون أحد الغازات الرئيسية المسببة للاحتباس الحراري."
+                info: "ثاني أكسيد الكربون هو أحد الغازات الرئيسية المسؤولة عن الاحتباس الحراري."
             },
             {
-                question: "ما هي طرق الحد من تلوث الهواء؟",
+                question: "ما هي الطرق لتقليل تلوث الهواء؟",
                 options: ["زيادة المصانع", "زراعة الأشجار", "حرق النفايات", "استخدام البلاستيك"],
                 correctAnswer: 1,
                 topic: 'air',
-                info: "زراعة الأشجار تساعد في امتصاص ثاني أكسيد الكربون."
+                info: "زراعة الأشجار تساعد على امتصاص ثاني أكسيد الكربون."
             },
             {
                 question: "ما هو تأثير تلوث الهواء على المناخ؟",
-                options: ["انخفاض درجة الحرارة", "تغير المناخ", "زيادة الأمطار", "تحسين الجو"],
+                options: ["انخفاض درجات الحرارة", "تغير المناخ", "زيادة الأمطار", "تحسين الهواء"],
                 correctAnswer: 1,
                 topic: 'air',
-                info: "تلوث الهواء يؤدي إلى تغير المناخ بسبب ظاهرة الاحتباس الحراري."
+                info: "تلوث الهواء يؤدي إلى تغير المناخ بسبب الاحتباس الحراري."
             },
             {
-                question: "ما هو الدور الرئيسي للطاقة المتجددة في تقليل تلوث الهواء؟",
-                options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما ذكر"],
+                question: "ما هو الدور الرئيسي للطاقات المتجددة في تقليل تلوث الهواء؟",
+                options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما سبق"],
                 correctAnswer: 1,
                 topic: 'air',
-                info: "الطاقة المتجددة تقلل من انبعاثات الغازات الضارة."
+                info: "الطاقة المتجددة تقلل من انبعاث الغازات الضارة."
             }
         ],
         environment: [
             {
-                question: "ما هو التلوث البيئي؟",
-                options: ["زيادة النباتات", "انتشار النفايات", "تنظيف البيئة", "استخدام الطاقة المتجددة"],
+                question: "ما هي التلوث البيئي؟",
+                options: ["زيادة النباتات", "انتشار النفايات", "تنظيف البيئة", "استخدام الطاقات المتجددة"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "التلوث البيئي يحدث بسبب النفايات الصناعية والأنشطة البشرية."
+                info: "التلوث البيئي ناجم عن النفايات الصناعية والأنشطة البشرية."
             },
             {
-                question: "ما هي أفضل طريقة للحد من التلوث البيئي؟",
-                options: ["إعادة التدوير", "حرق النفايات", "إلقاء النفايات في البحر", "زيادة استخدام البلاستيك"],
+                question: "ما هي أفضل طريقة لتقليل التلوث البيئي؟",
+                options: ["التدوير", "حرق النفايات", "رمي النفايات في البحر", "زيادة استخدام البلاستيك"],
                 correctAnswer: 0,
                 topic: 'environment',
-                info: "إعادة التدوير يقلل من كمية النفايات ويحسن البيئة."
+                info: "التدوير يقلل من كمية النفايات ويعزز البيئة."
             },
             {
                 question: "ما هو تأثير التلوث البيئي على الحياة البحرية؟",
                 options: ["زيادة الأسماك", "تدمير الموائل البحرية", "تحسين جودة المياه", "زيادة الأكسجين"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "التلوث البيئي يؤدي إلى تدمير الموائل البحرية."
+                info: "التلوث البيئي يدمر الموائل البحرية."
             },
             {
-                question: "ما هي أكثر المواد شيوعًا في تلوث البيئة؟",
+                question: "ما هو المادة الأكثر شيوعًا في التلوث البيئي؟",
                 options: ["البلاستيك", "الورق", "الزجاج", "المعادن"],
                 correctAnswer: 0,
                 topic: 'environment',
-                info: "البلاستيك هو أحد أكثر المواد تلويثًا للبيئة."
+                info: "البلاستيك هو أحد أكثر المواد تلوثًا للبيئة."
             },
             {
-                question: "ما هو الدور الرئيسي للطاقة المتجددة في الحد من التلوث البيئي؟",
-                options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما ذكر"],
+                question: "ما هو الدور الرئيسي للطاقة المتجددة في تقليل التلوث البيئي؟",
+                options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما سبق"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "الطاقة المتجددة تقلل من انبعاثات الكربون."
+                info: "الطاقة المتجددة تقلل من انبعاث الكربون."
             },
             {
                 question: "ما هو تأثير التلوث البيئي على التربة؟",
                 options: ["زيادة الخصوبة", "تدهور التربة", "تحسين جودة التربة", "زيادة الأمطار"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "التلوث البيئي يؤدي إلى تدهور التربة بسبب المواد الكيميائية."
+                info: "التلوث البيئي يتسبب في تدهور التربة بسبب المواد الكيميائية."
             },
             {
                 question: "ما هي أفضل طريقة للتخلص من النفايات؟",
-                options: ["إعادة التدوير", "إلقاء النفايات في البحر", "حرق النفايات", "زيادة استخدام البلاستيك"],
+                options: ["التدوير", "رمي النفايات في البحر", "حرق النفايات", "زيادة استخدام البلاستيك"],
                 correctAnswer: 0,
                 topic: 'environment',
-                info: "إعادة التدوير هي أفضل طريقة للتخلص من النفايات."
+                info: "التدوير هو أفضل طريقة للتخلص من النفايات."
             },
             {
                 question: "ما هو تأثير التلوث البيئي على الصحة العامة؟",
@@ -472,11 +471,11 @@ function getQuestions(topic) {
                 info: "التلوث البيئي يزيد من الأمراض مثل السرطان وأمراض الجهاز التنفسي."
             },
             {
-                question: "ما هي أفضل طريقة للحفاظ على المياه؟",
-                options: ["إهمال النظافة", "تقليل استخدام المواد الكيميائية", "زيادة إلقاء النفايات", "حرق النفايات"],
+                question: "ما هي أفضل طريقة لحماية المياه؟",
+                options: ["إهمال النظافة", "تقليل استخدام المواد الكيميائية", "زيادة تصريف النفايات", "حرق النفايات"],
                 correctAnswer: 1,
                 topic: 'environment',
-                info: "تقليل استخدام المواد الكيميائية يساعد في الحفاظ على المياه."
+                info: "تقليل استخدام المواد الكيميائية يساعد في حماية المياه."
             },
             {
                 question: "ما هو تأثير التلوث البيئي على الغلاف الجوي؟",
@@ -486,481 +485,481 @@ function getQuestions(topic) {
                 info: "التلوث البيئي يزيد من تلوث الهواء."
             }
         ],
-        water: [
-            {
-                question: "ما هي مصادر تلوث المياه؟",
-                options: ["النفايات الكيميائية", "الأشجار", "الهواء", "التربة"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "النفايات الكيميائية هي أحد المصادر الرئيسية لتلوث المياه."
-            },
-            {
-                question: "ما هي الآثار الرئيسية لتلوث المياه على صحة الإنسان؟",
-                options: ["انتشار الأمراض", "تحسين الصحة", "زيادة الطاقة", "تحسين جودة المياه"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "تلوث المياه يسبب أمراضًا مثل الكوليرا والتيفوئيد."
-            },
-            {
-                question: "ما هو الدور الرئيسي للمحيطات في النظام البيئي؟",
-                options: ["تنظيم المناخ", "تلوث الهواء", "زيادة النفايات", "تقليل الأكسجين"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "المحيطات تلعب دورًا رئيسيًا في تنظيم المناخ العالمي."
-            },
-            {
-                question: "ما هي أكثر المواد تلويثًا للمحيطات؟",
-                options: ["البلاستيك", "الورق", "الزجاج", "المعادن"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "البلاستيك هو أحد أكثر المواد تلويثًا للمحيطات."
-            },
-            {
-                question: "ما هي أفضل طريقة للحد من تلوث المياه؟",
-                options: ["تقليل استخدام المواد الكيميائية", "زيادة إلقاء النفايات", "حرق النفايات", "إهمال النظافة"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "تقليل استخدام المواد الكيميائية يساعد في الحد من تلوث المياه."
-            },
-            {
-                question: "ما هو تأثير تلوث المياه على الحياة البحرية؟",
-                options: ["زيادة الأسماك", "تدمير الموائل البحرية", "تحسين جودة المياه", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'water',
-                info: "تلوث المياه يؤدي إلى تدمير الموائل البحرية."
-            },
-            {
-                question: "ما هو تأثير التلوث المائي على الزراعة؟",
-                options: ["زيادة المحاصيل", "تلف المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
-                correctAnswer: 1,
-                topic: 'water',
-                info: "تلوث المياه يؤدي إلى تلف المحاصيل الزراعية."
-            },
-            {
-                question: "ما هو الدور الرئيسي للأنهار في النظام البيئي؟",
-                options: ["توفير المياه", "تلوث الهواء", "زيادة النفايات", "تقليل الأكسجين"],
-                correctAnswer: 0,
-                topic: 'water',
-                info: "الأنهار تلعب دورًا رئيسيًا في توفير المياه للنظم البيئية."
-            },
-            {
-                question: "ما هو تأثير التلوث المائي على الطيور البحرية؟",
-                options: ["زيادة أعداد الطيور", "تدمير موائل الطيور", "تحسين جودة المياه", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'water',
-                info: "تلوث المياه يؤدي إلى تدمير موائل الطيور البحرية."
-            },
-            {
-                question: "ما هي أفضل طريقة لتنظيف المحيطات؟",
-                options: ["إهمال النظافة", "إزالة النفايات البلاستيكية", "زيادة إلقاء النفايات", "حرق النفايات"],
-                correctAnswer: 1,
-                topic: 'water',
-                info: "إزالة النفايات البلاستيكية هي أفضل طريقة لتنظيف المحيطات."
-            }
-        ],
-        warming: [
-            {
-                question: "ما هو الاحتباس الحراري؟",
-                options: ["انخفاض درجة حرارة الأرض", "ارتفاع درجة حرارة الأرض", "تلوث الهواء", "تلوث المياه"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "الاحتباس الحراري هو ارتفاع درجة حرارة الأرض بسبب زيادة غازات الدفيئة."
-            },
-            {
-                question: "ما هي الغازات المسببة للاحتباس الحراري؟",
-                options: ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "ثاني أكسيد الكربون هو أحد الغازات الرئيسية المسببة للاحتباس الحراري."
-            },
-            {
-                question: "ما هي الآثار الرئيسية للاحتباس الحراري؟",
-                options: ["ارتفاع مستوى سطح البحر", "انخفاض درجة الحرارة", "زيادة الجليد القطبي", "تحسين جودة الهواء"],
-                correctAnswer: 0,
-                topic: 'warming',
-                info: "الاحتباس الحراري يسبب ارتفاع مستوى سطح البحر بسبب ذوبان الجليد."
-            },
-            {
-                question: "ما هو الدور الرئيسي للغابات في الحد من الاحتباس الحراري؟",
-                options: ["امتصاص ثاني أكسيد الكربون", "إطلاق ثاني أكسيد الكربون", "تلوث الهواء", "زيادة درجة الحرارة"],
-                correctAnswer: 0,
-                topic: 'warming',
-                info: "الغابات تمتص ثاني أكسيد الكربون وتساعد في الحد من الاحتباس الحراري."
-            },
-            {
-                question: "ما هي أفضل طريقة للحد من الاحتباس الحراري؟",
-                options: ["استخدام الطاقة المتجددة", "زيادة استخدام الوقود الأحفوري", "إزالة الغابات", "إهمال النفايات"],
-                correctAnswer: 0,
-                topic: 'warming',
-                info: "استخدام الطاقة المتجددة يساعد في تقليل انبعاثات غازات الدفيئة."
-            },
-            {
-                question: "ما هو تأثير الاحتباس الحراري على الزراعة؟",
-                options: ["زيادة المحاصيل", "تلف المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "الاحتباس الحراري يؤدي إلى تلف المحاصيل بسبب التغيرات المناخية."
-            },
-            {
-                question: "ما هو تأثير الاحتباس الحراري على القمم الجليدية؟",
-                options: ["زيادة الجليد", "ذوبان الجليد", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "الاحتباس الحراري يؤدي إلى ذوبان القمم الجليدية."
-            },
-            {
-                question: "ما هو تأثير الاحتباس الحراري على أنماط الطقس؟",
-                options: ["استقرار الطقس", "تغيرات في الطقس", "زيادة الأمطار", "تحسن الجو"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "الاحتباس الحراري يؤدي إلى تغيرات في أنماط الطقس."
-            },
-            {
-                question: "ما هو تأثير الاحتباس الحراري على الكائنات الحيوانية؟",
-                options: ["زيادة التنوع البيولوجي", "انقراض بعض الأنواع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "الاحتباس الحراري يؤدي إلى انقراض بعض الأنواع الحيوانية."
-            },
-            {
-                question: "ما هي أفضل طريقة للحد من انبعاثات غازات الدفيئة؟",
-                options: ["زيادة الصناعات", "استخدام الطاقة المتجددة", "إزالة الغابات", "إهمال النفايات"],
-                correctAnswer: 1,
-                topic: 'warming',
-                info: "استخدام الطاقة المتجددة يساعد في تقليل انبعاثات غازات الدفيئة."
-            }
-        ],
-        "solid-waste": [
-            // الأسئلة الجديدة لإدارة النفايات الصلبة (15 سؤالًا)
-            {
-                question: "ما هي النفايات الصلبة؟",
-                options: ["النفايات المنزلية", "النفايات السائلة", "الغازات الضارة", "الأمطار"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "النفايات الصلبة تشمل النفايات المنزلية والصناعية والطبية."
-            },
-            {
-                question: "ما هي أفضل طريقة لإدارة النفايات الصلبة؟",
-                options: ["إعادة التدوير", "إلقاء النفايات في الشوارع", "حرق النفايات", "ترك النفايات للتتحلل"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "إعادة التدوير هي أفضل طريقة لإدارة النفايات الصلبة."
-            },
-            {
-                question: "ما هو تأثير النفايات الصلبة على البيئة؟",
-                options: ["تلوث التربة والمياه", "تحسين جودة الهواء", "زيادة الأكسجين", "زيادة الأمطار"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "النفايات الصلبة تسبب تلوث التربة والمياه إذا لم يتم التخلص منها بشكل صحيح."
-            },
-            {
-                question: "ما هي تقنية تحويل النفايات إلى طاقة؟",
-                options: ["إعادة التدوير", "تحويل النفايات إلى سماد", "تحويل النفايات إلى طاقة كهربائية", "ترك النفايات للتتحلل"],
-                correctAnswer: 2,
-                topic: 'solid-waste',
-                info: "تقنية تحويل النفايات إلى طاقة تستخدم لتحويل النفايات إلى طاقة كهربائية."
-            },
-            {
-                question: "ما هو الدور الرئيسي للمدافن الصحية في إدارة النفايات؟",
-                options: ["التخلص الآمن من النفايات", "زيادة التلوث", "تحسين جودة الهواء", "زيادة الأمطار"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "المدافن الصحية توفر طريقة آمنة للتخلص من النفايات الصلبة."
-            },
-            {
-                question: "ما هو تأثير النفايات الإلكترونية على البيئة؟",
-                options: ["زيادة التلوث", "تحسين الصحة", "زيادة الطاقة", "تحسين الرؤية"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "النفايات الإلكترونية تحتوي على مواد سامة تلوث البيئة."
-            },
-            {
-                question: "ما هي فوائد إعادة التدوير؟",
-                options: ["تقليل النفايات", "زيادة التلوث", "زيادة استخدام البلاستيك", "زيادة إنتاج الغازات الضارة"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "إعادة التدوير تقلل من كمية النفايات وتوفر المواد الخام."
-            },
-            {
-                question: "ما هي النفايات الخطرة؟",
-                options: ["النفايات العادية", "النفايات الطبية", "النفايات المنزلية", "النفايات الزراعية"],
-                correctAnswer: 1,
-                topic: 'solid-waste',
-                info: "النفايات الخطرة تشمل النفايات الطبية والكيميائية التي تحتاج إلى التخلص الآمن."
-            },
-            {
-                question: "ما هي أهمية الفرز عند التخلص من النفايات؟",
-                options: ["زيادة التلوث", "تسهيل إعادة التدوير", "زيادة النفايات", "زيادة استخدام البلاستيك"],
-                correctAnswer: 1,
-                topic: 'solid-waste',
-                info: "الفرز يسهل عملية إعادة التدوير ويقلل من النفايات."
-            },
-            {
-                question: "ما هو تأثير النفايات الصلبة على الصحة العامة؟",
-                options: ["زيادة الأمراض", "تحسين الصحة", "زيادة الطاقة", "تحسين الرؤية"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "النفايات الصلبة تسبب أمراضًا مثل الحساسية والتسمم."
-            },
-            {
-                question: "ما هي النفايات العضوية؟",
-                options: ["النفايات المنزلية", "بقايا الطعام", "النفايات الإلكترونية", "النفايات الطبية"],
-                correctAnswer: 1,
-                topic: 'solid-waste',
-                info: "النفايات العضوية تشمل بقايا الطعام والمواد القابلة للتحلل."
-            },
-            {
-                question: "ما هو دور السماد في إدارة النفايات؟",
-                options: ["تحويل النفايات العضوية إلى سماد", "زيادة التلوث", "تحسين جودة الهواء", "زيادة الأمطار"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "السماد يحول النفايات العضوية إلى سماد طبيعي."
-            },
-            {
-                question: "ما هي النفايات غير القابلة للتحلل؟",
-                options: ["البلاستيك", "بقايا الطعام", "الورق", "الخشب"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "البلاستيك من أبرز النفايات غير القابلة للتحلل."
-            },
-            {
-                question: "ما هو تأثير النفايات الصلبة على الحياة البرية؟",
-                options: ["زيادة التنوع البيولوجي", "تدمير الموائل", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'solid-waste',
-                info: "النفايات الصلبة تدمر الموائل الطبيعية للحيوانات."
-            },
-            {
-                question: "ما هي أفضل طريقة للتخلص من النفايات الإلكترونية؟",
-                options: ["إعادة التدوير", "إلقاءها في الشوارع", "حرقها", "تركها للتتحلل"],
-                correctAnswer: 0,
-                topic: 'solid-waste',
-                info: "إعادة التدوير هي أفضل طريقة للتخلص من النفايات الإلكترونية."
-            }
-        ],
-        "renewable-energy": [
-            // الأسئلة الجديدة للطاقة المتجددة (15 سؤالًا)
-            {
-                question: "ما هي الطاقة المتجددة؟",
-                options: ["الطاقة الشمسية", "الطاقة الأحفورية", "الطاقة النووية", "الطاقة الكهرومغناطيسية"],
-                correctAnswer: 0,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تأتي من مصادر طبيعية مثل الشمس والرياح والماء."
-            },
-            {
-                question: "ما هو مثال على الطاقة المتجددة؟",
-                options: ["الفحم", "الرياح", "البترول", "الغاز الطبيعي"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الرياح هي مصدر طاقة متجدد يساعد في تقليل الانبعاثات الكربونية."
-            },
-            {
-                question: "ما هي فوائد استخدام الطاقة الشمسية؟",
-                options: ["زيادة التلوث", "تقليل انبعاثات الكربون", "زيادة استهلاك الوقود الأحفوري", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة الشمسية تقلل من انبعاثات الكربون وتعد مصدرًا نظيفًا للطاقة."
-            },
-            {
-                question: "ما هو أكبر عائق أمام استخدام الطاقة المتجددة؟",
-                options: ["التكلفة العالية", "الوفرة الزائدة", "سهولة الاستخدام", "لا شيء مما ذكر"],
-                correctAnswer: 0,
-                topic: 'renewable-energy',
-                info: "التكلفة العالية لإنشاء البنية التحتية تعد أحد التحديات الرئيسية."
-            },
-            {
-                question: "ما هي الطاقة التي يتم إنتاجها من حركة المياه؟",
-                options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة المائية", "الطاقة الحرارية"],
-                correctAnswer: 2,
-                topic: 'renewable-energy',
-                info: "الطاقة المائية تنتج من حركة المياه مثل السدود والأنهار."
-            },
-            {
-                question: "ما هي فوائد استخدام الطاقة الريحية؟",
-                options: ["زيادة التلوث", "تقليل انبعاثات الكربون", "زيادة استخدام الوقود الأحفوري", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة الريحية تقلل من انبعاثات الكربون وتعد مصدرًا نظيفًا للطاقة."
-            },
-            {
-                question: "ما هي الطاقة الحرارية الجوفية؟",
-                options: ["الطاقة الشمسية", "الطاقة المستخرجة من باطن الأرض", "الطاقة الريحية", "الطاقة المائية"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة الحرارية الجوفية تأتي من الحرارة الموجودة داخل الأرض."
-            },
-            {
-                question: "ما هو الدور الرئيسي للطاقة المتجددة في الحد من التلوث؟",
-                options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تقلل من انبعاثات الكربون."
-            },
-            {
-                question: "ما هي أكثر الدول استخدامًا للطاقة المتجددة؟",
-                options: ["الصين", "كندا", "ألمانيا", "اليابان"],
-                correctAnswer: 0,
-                topic: 'renewable-energy',
-                info: "الصين واحدة من أكثر الدول استخدامًا للطاقة المتجددة."
-            },
-            {
-                question: "ما هو تأثير الطاقة المتجددة على الاقتصاد؟",
-                options: ["زيادة البطالة", "خلق فرص عمل جديدة", "زيادة التلوث", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تخلق فرص عمل جديدة في مجالات متعددة."
-            },
-            {
-                question: "ما هي الطاقة التي تعتمد على المد والجزر؟",
-                options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة المدية", "الطاقة الحرارية"],
-                correctAnswer: 2,
-                topic: 'renewable-energy',
-                info: "الطاقة المدية تعتمد على حركة المد والجزر."
-            },
-            {
-                question: "ما هو تأثير الطاقة المتجددة على البيئة؟",
-                options: ["زيادة التلوث", "تقليل التلوث", "زيادة استخدام الوقود الأحفوري", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تقلل من التلوث البيئي."
-            },
-            {
-                question: "ما هي الطاقة التي تنتج من الكتلة الحيوية؟",
-                options: ["الطاقة الشمسية", "الطاقة الكتلية", "الطاقة الريحية", "الطاقة المائية"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة الكتلية تنتج من المواد العضوية مثل النباتات."
-            },
-            {
-                question: "ما هو تأثير الطاقة المتجددة على الأمن الطاقي؟",
-                options: ["زيادة الاعتماد على النفط", "تقليل الاعتماد على الوقود الأحفوري", "زيادة التلوث", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تقلل من الاعتماد على الوقود الأحفوري."
-            },
-            {
-                question: "ما هي الطاقة التي تنتج من حركة الأمواج؟",
-                options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة الموجية", "الطاقة الحرارية"],
-                correctAnswer: 2,
-                topic: 'renewable-energy',
-                info: "الطاقة الموجية تعتمد على حركة الأمواج."
-            },
-            {
-                question: "ما هو تأثير الطاقة المتجددة على المناخ؟",
-                options: ["زيادة الانبعاثات", "تقليل الانبعاثات", "زيادة التلوث", "لا شيء مما ذكر"],
-                correctAnswer: 1,
-                topic: 'renewable-energy',
-                info: "الطاقة المتجددة تقلل من الانبعاثات الضارة بالمناخ."
-            }
-        ],
-        biodiversity: [
-            // الأسئلة الجديدة للتنوع البيولوجي (15 سؤالًا)
-            {
-                question: "ما هو التنوع البيولوجي؟",
-                options: ["تنوع الحياة على الأرض", "تنوع الصخور", "تنوع الأجواء", "تنوع الألوان"],
-                correctAnswer: 0,
-                topic: 'biodiversity',
-                info: "التنوع البيولوجي يشير إلى تنوع الحياة على الأرض."
-            },
-            {
-                question: "ما هي أهمية التنوع البيولوجي؟",
-                options: ["تحسين الاقتصاد", "الحفاظ على التوازن البيئي", "زيادة التلوث", "زيادة استخدام البلاستيك"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "التنوع البيولوجي يلعب دورًا حيويًا في الحفاظ على التوازن البيئي."
-            },
-            {
-                question: "ما هي أكبر تهديدات التنوع البيولوجي؟",
-                options: ["تدمير الموائل", "زراعة الأشجار", "استخدام الطاقة المتجددة", "تنظيف البيئة"],
-                correctAnswer: 0,
-                topic: 'biodiversity',
-                info: "تدمير الموائل الطبيعية هو أحد أكبر التهديدات للتنوع البيولوجي."
-            },
-            {
-                question: "ما هو الدور الرئيسي للنباتات في التنوع البيولوجي؟",
-                options: ["إنتاج الأكسجين", "زيادة التلوث", "إطلاق ثاني أكسيد الكربون", "تقليل الأمطار"],
-                correctAnswer: 0,
-                topic: 'biodiversity',
-                info: "النباتات تلعب دورًا رئيسيًا في إنتاج الأكسجين والحفاظ على التوازن البيئي."
-            },
-            {
-                question: "ما هو تأثير التغير المناخي على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "التغير المناخي يؤدي إلى انخفاض التنوع البيولوجي بسبب تدمير الموائل."
-            },
-            {
-                question: "ما هو تأثير الصيد الجائر على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "الصيد الجائر يؤدي إلى انخفاض التنوع البيولوجي."
-            },
-            {
-                question: "ما هي المناطق الغنية بالتنوع البيولوجي؟",
-                options: ["الصحاري", "الغابات الاستوائية", "الجبال", "المناطق القطبية"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "الغابات الاستوائية من أغنى المناطق بالتنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير الزراعة المفرطة على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "الزراعة المفرطة تدمر الموائل الطبيعية وتقلل التنوع البيولوجي."
-            },
-            {
-                question: "ما هو دور الحشرات في التنوع البيولوجي؟",
-                options: ["نقل اللقاح", "زيادة التلوث", "إطلاق ثاني أكسيد الكربون", "تقليل الأمطار"],
-                correctAnswer: 0,
-                topic: 'biodiversity',
-                info: "الحشرات تلعب دورًا رئيسيًا في نقل اللقاح وإنتاج الغذاء."
-            },
-            {
-                question: "ما هو تأثير الغابات على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 0,
-                topic: 'biodiversity',
-                info: "الغابات توفر موائل طبيعية وتحافظ على التنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير التحضر على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "التحضر يؤدي إلى تدمير الموائل الطبيعية وانخفاض التنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير التلوث على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "التلوث يدمر الموائل الطبيعية ويقلل التنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير السياحة على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "السياحة الجائرة تدمر الموائل الطبيعية وتنخفض التنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير الحرائق الغابات على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "الحرائق تدمر الموائل الطبيعية وتنخفض التنوع البيولوجي."
-            },
-            {
-                question: "ما هو تأثير الحروب على التنوع البيولوجي؟",
-                options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
-                correctAnswer: 1,
-                topic: 'biodiversity',
-                info: "الحروب تدمر الموائل الطبيعية وتنخفض التنوع البيولوجي."
-            }
-        ]
-    };
+      water: [
+    {
+        question: "ما هي مصادر تلوث الماء؟",
+        options: ["النفايات الكيميائية", "الأشجار", "الهواء", "التربة"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "النفايات الكيميائية هي واحدة من المصادر الرئيسية لتلوث الماء."
+    },
+    {
+        question: "ما هي الآثار الرئيسية لتلوث الماء على صحة الإنسان؟",
+        options: ["انتشار الأمراض", "تحسين الصحة", "زيادة الطاقة", "تحسين جودة الماء"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "تلوث الماء يسبب أمراضًا مثل الكوليرا والتيفوئيد."
+    },
+    {
+        question: "ما هو الدور الرئيسي للمحيطات في النظام البيئي؟",
+        options: ["تنظيم المناخ", "تلوث الهواء", "زيادة النفايات", "تقليل الأكسجين"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "تلعب المحيطات دورًا رئيسيًا في تنظيم المناخ العالمي."
+    },
+    {
+        question: "ما هو المادة الأكثر تلوثًا للمحيطات؟",
+        options: ["البلاستيك", "الورق", "الزجاج", "المعادن"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "البلاستيك هو أحد أكثر المواد تلوثًا للمحيطات."
+    },
+    {
+        question: "ما هي أفضل طريقة لتقليل تلوث الماء؟",
+        options: ["تقليل استخدام المواد الكيميائية", "زيادة تصريف النفايات", "حرق النفايات", "إهمال النظافة"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "تقليل استخدام المواد الكيميائية يساعد في تقليل تلوث الماء."
+    },
+    {
+        question: "ما هو تأثير تلوث الماء على الحياة البحرية؟",
+        options: ["زيادة الأسماك", "تدمير الموائل البحرية", "تحسين جودة الماء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'water',
+        info: "تلوث الماء يؤدي إلى تدمير الموائل البحرية."
+    },
+    {
+        question: "ما هو تأثير تلوث الماء على الزراعة؟",
+        options: ["زيادة المحاصيل", "تدمير المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
+        correctAnswer: 1,
+        topic: 'water',
+        info: "تلوث الماء يتسبب في تدمير المحاصيل الزراعية."
+    },
+    {
+        question: "ما هو الدور الرئيسي للأنهار في النظام البيئي؟",
+        options: ["توفير المياه", "تلوث الهواء", "زيادة النفايات", "تقليل الأكسجين"],
+        correctAnswer: 0,
+        topic: 'water',
+        info: "تلعب الأنهار دورًا أساسيًا في توفير المياه للنظم البيئية."
+    },
+    {
+        question: "ما هو تأثير تلوث الماء على الطيور البحرية؟",
+        options: ["زيادة عدد الطيور", "تدمير موائل الطيور", "تحسين جودة الماء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'water',
+        info: "تلوث الماء يدمر موائل الطيور البحرية."
+    },
+    {
+        question: "ما هي أفضل طريقة لتنظيف المحيطات؟",
+        options: ["إهمال النظافة", "إزالة النفايات البلاستيكية", "زيادة تصريف النفايات", "حرق النفايات"],
+        correctAnswer: 1,
+        topic: 'water',
+        info: "إزالة النفايات البلاستيكية هي أفضل طريقة لتنظيف المحيطات."
+    }
+],
+warming: [
+    {
+        question: "ما هو الاحتباس الحراري؟",
+        options: ["انخفاض درجة حرارة الأرض", "ارتفاع درجة حرارة الأرض", "تلوث الهواء", "تلوث الماء"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "الاحتباس الحراري هو زيادة في درجة حرارة الأرض بسبب زيادة غازات الاحتباس الحراري."
+    },
+    {
+        question: "ما هي الغازات المسؤولة عن الاحتباس الحراري؟",
+        options: ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "ثاني أكسيد الكربون هو أحد الغازات الرئيسية المسؤولة عن الاحتباس الحراري."
+    },
+    {
+        question: "ما هي الآثار الرئيسية للاحترار العالمي؟",
+        options: ["ارتفاع مستوى سطح البحر", "انخفاض درجات الحرارة", "زيادة الجليد القطبي", "تحسين جودة الهواء"],
+        correctAnswer: 0,
+        topic: 'warming',
+        info: "الاحترار العالمي يؤدي إلى ارتفاع مستوى سطح البحر بسبب ذوبان الجليد."
+    },
+    {
+        question: "ما هو الدور الرئيسي للغابات في مكافحة الاحترار العالمي؟",
+        options: ["امتصاص ثاني أكسيد الكربون", "انبعاث ثاني أكسيد الكربون", "تلوث الهواء", "زيادة درجة الحرارة"],
+        correctAnswer: 0,
+        topic: 'warming',
+        info: "تمتص الغابات ثاني أكسيد الكربون وتساعد في الحد من الاحترار العالمي."
+    },
+    {
+        question: "ما هي أفضل طريقة لمكافحة الاحترار العالمي؟",
+        options: ["استخدام الطاقات المتجددة", "زيادة استخدام الوقود الأحفوري", "تدمير الغابات", "إهمال النفايات"],
+        correctAnswer: 0,
+        topic: 'warming',
+        info: "استخدام الطاقات المتجددة يساعد في تقليل انبعاث غازات الاحتباس الحراري."
+    },
+    {
+        question: "ما هو تأثير الاحترار العالمي على الزراعة؟",
+        options: ["زيادة المحاصيل", "تدمير المحاصيل", "تحسين جودة التربة", "زيادة الأمطار"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "الاحترار العالمي يدمر المحاصيل بسبب التغيرات المناخية."
+    },
+    {
+        question: "ما هو تأثير الاحترار العالمي على القمم الجليدية؟",
+        options: ["زيادة الجليد", "ذوبان الجليد", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "الاحترار العالمي يؤدي إلى ذوبان القمم الجليدية."
+    },
+    {
+        question: "ما هو تأثير الاحترار العالمي على أنماط الطقس؟",
+        options: ["استقرار المناخ", "تغيرات في المناخ", "زيادة الأمطار", "تحسين الأحوال الجوية"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "الاحترار العالمي يؤدي إلى تغيرات في أنماط الطقس."
+    },
+    {
+        question: "ما هو تأثير الاحترار العالمي على الحيوانات؟",
+        options: ["زيادة التنوع البيولوجي", "انقراض بعض الأنواع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "الاحترار العالمي يؤدي إلى انقراض بعض الأنواع الحيوانية."
+    },
+    {
+        question: "ما هي أفضل طريقة لتقليل انبعاثات غازات الاحتباس الحراري؟",
+        options: ["زيادة الصناعات", "استخدام الطاقات المتجددة", "تدمير الغابات", "إهمال النفايات"],
+        correctAnswer: 1,
+        topic: 'warming',
+        info: "استخدام الطاقات المتجددة يساعد في تقليل انبعاثات غازات الاحتباس الحراري."
+    }
+],
+      "solid-waste": [
+    // الأسئلة الجديدة حول إدارة النفايات الصلبة (15 سؤالًا)
+    {
+        question: "ما هي النفايات الصلبة؟",
+        options: ["النفايات المنزلية", "النفايات السائلة", "الغازات الضارة", "الأمطار"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "النفايات الصلبة تشمل النفايات المنزلية والصناعية والطبية."
+    },
+    {
+        question: "ما هي أفضل طريقة لإدارة النفايات الصلبة؟",
+        options: ["التدوير", "رمي النفايات في الشوارع", "حرق النفايات", "ترك النفايات لتتحلل"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "التدوير هو أفضل طريقة لإدارة النفايات الصلبة."
+    },
+    {
+        question: "ما هو تأثير النفايات الصلبة على البيئة؟",
+        options: ["تلوث التربة والماء", "تحسين جودة الهواء", "زيادة الأكسجين", "زيادة الأمطار"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "النفايات الصلبة تسبب تلوث التربة والماء إذا لم يتم التخلص منها بشكل صحيح."
+    },
+    {
+        question: "ما هي تقنية تحويل النفايات إلى طاقة؟",
+        options: ["التدوير", "تحويل النفايات إلى سماد", "تحويل النفايات إلى طاقة كهربائية", "ترك النفايات لتتحلل"],
+        correctAnswer: 2,
+        topic: 'solid-waste',
+        info: "تُستخدم تقنية تحويل النفايات إلى طاقة لتحويل النفايات إلى كهرباء."
+    },
+    {
+        question: "ما هو الدور الرئيسي للمكبات الصحية في إدارة النفايات؟",
+        options: ["التخلص الآمن من النفايات", "زيادة التلوث", "تحسين جودة الهواء", "زيادة الأمطار"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "المكبات الصحية توفر طريقة آمنة للتخلص من النفايات الصلبة."
+    },
+    {
+        question: "ما هو تأثير النفايات الإلكترونية على البيئة؟",
+        options: ["زيادة التلوث", "تحسين الصحة", "زيادة الطاقة", "تحسين الرؤية"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "النفايات الإلكترونية تحتوي على مواد سامة تلوث البيئة."
+    },
+    {
+        question: "ما هي فوائد التدوير؟",
+        options: ["تقليل النفايات", "زيادة التلوث", "زيادة استخدام البلاستيك", "زيادة إنتاج الغازات الضارة"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "التدوير يقلل من كمية النفايات ويوفر المواد الخام."
+    },
+    {
+        question: "ما هي النفايات الخطرة؟",
+        options: ["النفايات العادية", "النفايات الطبية", "النفايات المنزلية", "النفايات الزراعية"],
+        correctAnswer: 1,
+        topic: 'solid-waste',
+        info: "النفايات الخطرة تشمل النفايات الطبية والكيميائية التي تتطلب التخلص الآمن."
+    },
+    {
+        question: "ما هي أهمية الفرز أثناء التخلص من النفايات؟",
+        options: ["زيادة التلوث", "تسهيل التدوير", "زيادة النفايات", "زيادة استخدام البلاستيك"],
+        correctAnswer: 1,
+        topic: 'solid-waste',
+        info: "الفرز يسهل عملية التدوير ويقلل من النفايات."
+    },
+    {
+        question: "ما هو تأثير النفايات الصلبة على الصحة العامة؟",
+        options: ["زيادة الأمراض", "تحسين الصحة", "زيادة الطاقة", "تحسين الرؤية"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "النفايات الصلبة تسبب أمراضًا مثل الحساسية والتسمم."
+    },
+    {
+        question: "ما هي النفايات العضوية؟",
+        options: ["النفايات المنزلية", "بقايا الطعام", "النفايات الإلكترونية", "النفايات الطبية"],
+        correctAnswer: 1,
+        topic: 'solid-waste',
+        info: "النفايات العضوية تشمل بقايا الطعام والمواد القابلة للتحلل البيولوجي."
+    },
+    {
+        question: "ما هو دور السماد في إدارة النفايات؟",
+        options: ["تحويل النفايات العضوية إلى سماد", "زيادة التلوث", "تحسين جودة الهواء", "زيادة الأمطار"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "السماد يحول النفايات العضوية إلى أسمدة طبيعية."
+    },
+    {
+        question: "ما هي النفايات غير القابلة للتحلل؟",
+        options: ["البلاستيك", "بقايا الطعام", "الورق", "الخشب"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "البلاستيك هو أحد النفايات الرئيسية غير القابلة للتحلل."
+    },
+    {
+        question: "ما هو تأثير النفايات الصلبة على الحياة البرية؟",
+        options: ["زيادة التنوع البيولوجي", "تدمير الموائل", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'solid-waste',
+        info: "النفايات الصلبة تدمر الموائل الطبيعية للحيوانات."
+    },
+    {
+        question: "ما هي أفضل طريقة للتخلص من النفايات الإلكترونية؟",
+        options: ["التدوير", "رميها في الشوارع", "حرقها", "تركها لتتحلل"],
+        correctAnswer: 0,
+        topic: 'solid-waste',
+        info: "التدوير هو أفضل طريقة للتخلص من النفايات الإلكترونية."
+    }
+],
+  "renewable-energy": [
+    // الأسئلة الجديدة حول الطاقة المتجددة (15 سؤالًا)
+    {
+        question: "ما هي الطاقة المتجددة؟",
+        options: ["الطاقة الشمسية", "الطاقة الأحفورية", "الطاقة النووية", "الطاقة الكهرومغناطيسية"],
+        correctAnswer: 0,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تأتي من مصادر طبيعية مثل الشمس والرياح والماء."
+    },
+    {
+        question: "ما هو مثال على الطاقة المتجددة؟",
+        options: ["الفحم", "الرياح", "النفط", "الغاز الطبيعي"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الرياح هي مصدر للطاقة المتجددة التي تساعد في تقليل انبعاثات الكربون."
+    },
+    {
+        question: "ما هي فوائد استخدام الطاقة الشمسية؟",
+        options: ["زيادة التلوث", "تقليل انبعاثات الكربون", "زيادة استهلاك الوقود الأحفوري", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة الشمسية تقلل من انبعاثات الكربون وهي مصدر طاقة نظيف."
+    },
+    {
+        question: "ما هو العائق الرئيسي لاستخدام الطاقة المتجددة؟",
+        options: ["التكلفة العالية", "الوفرة الزائدة", "سهولة الاستخدام", "لا شيء مما سبق"],
+        correctAnswer: 0,
+        topic: 'renewable-energy',
+        info: "التكلفة العالية لإنشاء البنية التحتية هي واحدة من التحديات الرئيسية."
+    },
+    {
+        question: "ما هي الطاقة المنتجة من حركة الماء؟",
+        options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة الكهرومائية", "الطاقة الحرارية"],
+        correctAnswer: 2,
+        topic: 'renewable-energy',
+        info: "الطاقة الكهرومائية تنتج من حركة الماء، مثل السدود والأنهار."
+    },
+    {
+        question: "ما هي فوائد استخدام الطاقة الريحية؟",
+        options: ["زيادة التلوث", "تقليل انبعاثات الكربون", "زيادة استخدام الوقود الأحفوري", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة الريحية تقلل من انبعاثات الكربون وهي مصدر طاقة نظيف."
+    },
+    {
+        question: "ما هي الطاقة الجيوحرارية؟",
+        options: ["الطاقة الشمسية", "الطاقة المستخرجة من باطن الأرض", "الطاقة الريحية", "الطاقة الكهرومائية"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة الجيوحرارية تأتي من الحرارة الموجودة في باطن الأرض."
+    },
+    {
+        question: "ما هو الدور الرئيسي للطاقة المتجددة في تقليل التلوث؟",
+        options: ["زيادة التلوث", "تقليل الانبعاثات", "زيادة استخدام الوقود الأحفوري", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تقلل من انبعاثات الكربون."
+    },
+    {
+        question: "ما هو البلد الذي يستخدم الطاقة المتجددة أكثر من غيره؟",
+        options: ["الصين", "كندا", "ألمانيا", "اليابان"],
+        correctAnswer: 0,
+        topic: 'renewable-energy',
+        info: "الصين هي واحدة من الدول التي تستخدم الطاقة المتجددة بشكل كبير."
+    },
+    {
+        question: "ما هو تأثير الطاقة المتجددة على الاقتصاد؟",
+        options: ["زيادة البطالة", "خلق وظائف جديدة", "زيادة التلوث", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تخلق وظائف جديدة في مختلف المجالات."
+    },
+    {
+        question: "ما هي الطاقة التي تعتمد على المد والجزر؟",
+        options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة المدية", "الطاقة الحرارية"],
+        correctAnswer: 2,
+        topic: 'renewable-energy',
+        info: "الطاقة المدية تعتمد على حركة المد والجزر."
+    },
+    {
+        question: "ما هو تأثير الطاقة المتجددة على البيئة؟",
+        options: ["زيادة التلوث", "تقليل التلوث", "زيادة استخدام الوقود الأحفوري", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تقلل من التلوث البيئي."
+    },
+    {
+        question: "ما هي الطاقة المنتجة من الكتلة الحيوية؟",
+        options: ["الطاقة الشمسية", "الطاقة الحيوية", "الطاقة الريحية", "الطاقة الكهرومائية"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة الحيوية تنتج من المواد العضوية مثل النباتات."
+    },
+    {
+        question: "ما هو تأثير الطاقة المتجددة على الأمن الطاقوي؟",
+        options: ["زيادة الاعتماد على النفط", "تقليل الاعتماد على الوقود الأحفوري", "زيادة التلوث", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تقلل من الاعتماد على الوقود الأحفوري."
+    },
+    {
+        question: "ما هي الطاقة المنتجة من حركة الأمواج؟",
+        options: ["الطاقة الشمسية", "الطاقة الريحية", "الطاقة الموجية", "الطاقة الحرارية"],
+        correctAnswer: 2,
+        topic: 'renewable-energy',
+        info: "الطاقة الموجية تعتمد على حركة الأمواج."
+    },
+    {
+        question: "ما هو تأثير الطاقة المتجددة على المناخ؟",
+        options: ["زيادة الانبعاثات", "تقليل الانبعاثات", "زيادة التلوث", "لا شيء مما سبق"],
+        correctAnswer: 1,
+        topic: 'renewable-energy',
+        info: "الطاقة المتجددة تقلل من الانبعاثات الضارة للمناخ."
+    }
+],
+    biodiversity: [
+    // الأسئلة الجديدة حول التنوع البيولوجي (15 سؤالًا)
+    {
+        question: "ما هو التنوع البيولوجي؟",
+        options: ["تنوع الحياة على الأرض", "تنوع الصخور", "تنوع المناخ", "تنوع الألوان"],
+        correctAnswer: 0,
+        topic: 'biodiversity',
+        info: "يشير التنوع البيولوجي إلى تنوع الحياة على الأرض."
+    },
+    {
+        question: "ما هي أهمية التنوع البيولوجي؟",
+        options: ["تحسين الاقتصاد", "الحفاظ على التوازن البيئي", "زيادة التلوث", "زيادة استخدام البلاستيك"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "يلعب التنوع البيولوجي دورًا حيويًا في الحفاظ على التوازن البيئي."
+    },
+    {
+        question: "ما هي أكبر التهديدات للتنوع البيولوجي؟",
+        options: ["تدمير الموائل", "زراعة الأشجار", "استخدام الطاقات المتجددة", "تنظيف البيئة"],
+        correctAnswer: 0,
+        topic: 'biodiversity',
+        info: "تدمير الموائل الطبيعية هو أحد أكبر التهديدات للتنوع البيولوجي."
+    },
+    {
+        question: "ما هو الدور الرئيسي للنباتات في التنوع البيولوجي؟",
+        options: ["إنتاج الأكسجين", "زيادة التلوث", "انبعاث ثاني أكسيد الكربون", "تقليل الأمطار"],
+        correctAnswer: 0,
+        topic: 'biodiversity',
+        info: "تلعب النباتات دورًا أساسيًا في إنتاج الأكسجين والحفاظ على التوازن البيئي."
+    },
+    {
+        question: "ما هو تأثير تغير المناخ على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "يتسبب تغير المناخ في انخفاض التنوع البيولوجي بسبب تدمير الموائل."
+    },
+    {
+        question: "ما هو تأثير الصيد الجائر على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "الصيد الجائر يؤدي إلى انخفاض التنوع البيولوجي."
+    },
+    {
+        question: "ما هي المناطق الغنية بالتنوع البيولوجي؟",
+        options: ["الصحاري", "الغابات الاستوائية", "الجبال", "المناطق القطبية"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "الغابات الاستوائية هي من بين أغنى المناطق بالتنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير الزراعة المفرطة على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "الزراعة المفرطة تدمر الموائل الطبيعية وتقلل من التنوع البيولوجي."
+    },
+    {
+        question: "ما هو دور الحشرات في التنوع البيولوجي؟",
+        options: ["التلقيح", "زيادة التلوث", "انبعاث ثاني أكسيد الكربون", "تقليل الأمطار"],
+        correctAnswer: 0,
+        topic: 'biodiversity',
+        info: "تلعب الحشرات دورًا رئيسيًا في التلقيح وإنتاج الغذاء."
+    },
+    {
+        question: "ما هو تأثير الغابات على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 0,
+        topic: 'biodiversity',
+        info: "توفر الغابات موائل طبيعية وتحافظ على التنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير التحضر على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "يؤدي التحضر إلى تدمير الموائل الطبيعية وانخفاض التنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير التلوث على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "يؤدي التلوث إلى تدمير الموائل الطبيعية وانخفاض التنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير السياحة على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "السياحة المفرطة تدمر الموائل الطبيعية وتنخفض التنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير حرائق الغابات على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "تدمر الحرائق الموائل الطبيعية وتنخفض التنوع البيولوجي."
+    },
+    {
+        question: "ما هو تأثير الحروب على التنوع البيولوجي؟",
+        options: ["زيادة التنوع", "انخفاض التنوع", "تحسين جودة الهواء", "زيادة الأكسجين"],
+        correctAnswer: 1,
+        topic: 'biodiversity',
+        info: "تدمر الحروب الموائل الطبيعية وتنخفض التنوع البيولوجي."
+     }
+],
+         };
     return questions[topic] || [];
 }
