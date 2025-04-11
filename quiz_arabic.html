@@ -5,11 +5,11 @@
   <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Concours Environnemental Allal Ben Abdellah</title>
+  <title>الفريق البيئي</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <!-- Favicons -->
-  <link href="assets/img/favicon_boot.png" rel="icon">
+  <link href="assets/img/allal_icon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -46,9 +46,23 @@
       <nav id="navmenu" class="navmenu">
         <ul> 
             <li><a href="index_arabic.html" class="active"> الصفحة الرئيسية </a></li>
-          <li><a href="about_arabic.html">معلومات عنا </a></li>
-          <li><a href="testimonials_arabic.html">شهادات من المشاركين</a></li>
-          <li><a style="color:white; " href="quiz_arabic.html" class="btn btn-success btn-lg px-4 py-2">🚀 اجتز المسابقة </a></li>
+            <li><a href="about_arabic.html">معلومات عنا </a></li>
+            <li><a href="testimonials_arabic.html">شهادات من المشاركين</a></li>
+            <li class="dropdown"><a href="#"><span>اللغة</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+
+              <li><a class="dropdown-item" href="quiz_english.html">
+                    <img src="assets/img/flags/english.svg" width="40" alt="UK Flag" style="margin-right: 0px;">الانجليزية</a></li>
+
+              <li><a class="dropdown-item" href="quiz_arabic.html">
+                    <img src="assets/img/flags/arabic.svg" width="40" alt="Arabic Flag" style="margin-right: 0px;">العربية</a></li>
+
+              <li><a class="dropdown-item" href="quiz_french.html">
+                    <img src="assets/img/flags/french.svg" width="40" alt="French Flag" style="margin-right: 0px;">الفرنسية</a></li>
+
+            </ul>
+            </li>
+            <li><a style="color:white; " href="quiz_arabic.html" class="btn btn-success btn-lg px-4 py-2">🚀 اجتز المسابقة </a></li>
 
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -57,22 +71,7 @@
     </div>
   </header>
   <main class="main">
-    <button id="redirectButtonfrancais" class="btn btn-success btn-lg px-8 py-2">الفرنسية </button>
 
-    <script src="script_bouton_francais.js"></script> <!-- Lien vers le fichier JavaScript francais-->
-
-    
-    
-    <button id="redirectButtonarabe" class="btn btn-success btn-lg px-4 py-2">العربية</button>
-
-    <script src="script_bouton_arabe.js"></script> 
-
-
-     
-    <button id="redirectButtonanglais" class="btn btn-success btn-lg px-4 py-2">الانجليزية</button>
-
-    <script src="script_bouton_anglais.js"></script> 
-   
     <!-- Écran d'accueil -->
     <div id="welcome-screen" class="screen">
        
@@ -98,7 +97,7 @@
             <button onclick="showSection('about')" class="btn btn-success btn-lg px-4 py-2">حول المسابقة</button>
             <button onclick="showSection('participate')" class="btn btn-success btn-lg px-4 py-2">المشاركة في المسابقة</button>
         </nav>
-      <br><br><br><br><br><br><br><br><br>
+      <br><br>
         <div id="content" class="content-section">
             <!-- Contenu qui change selon la section sélectionnée -->
         </div>

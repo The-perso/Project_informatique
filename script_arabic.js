@@ -222,7 +222,7 @@ function showTopic(topic) {
 // بدء الاختبار
 function startQuiz(topic) {
     questions = getQuestions(topic);
-    currentQuestionIndex = 0;
+    currentQuestionIndex = 1;
     userScore = 0;
     wrongAnswers = [];
     displayQuestion();
@@ -238,11 +238,13 @@ function displayQuestion() {
         clearInterval(timerInterval);
     }
     content.innerHTML = `
+        <h3 style="color:black;">${currentQuestionIndex}/${questions.length} : رقم السؤال</h3>
         <h3 style="color:black;">${question.question}</h3>
         ${shuffledOptions.map((option, index) => `
             <button class="btn btn-success btn-lg px-4 py-2" onclick="checkAnswer(${index}, ${correctAnswerIndex})">${option}</button>
         `).join('')}
 
+    <br><br>
         <h4><p>الوقت المتبقي: <span id="timer">20</span> ثانية</p></h4>
 
     `;

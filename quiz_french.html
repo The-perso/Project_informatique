@@ -5,11 +5,11 @@
   <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Concours Environnemental Allal Ben Abdellah</title>
+  <title>Equipe écologique</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <!-- Favicons -->
-  <link href="assets/img/favicon_boot.png" rel="icon">
+  <link href="assets/img/allal_icon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -48,6 +48,19 @@
             <li><a href="index_french.html" class="active"> Acceuil </a></li>
             <li><a href="about_french.html">A propos de Quiz </a></li>
             <li><a href="testimonials_french.html">Témoignages des participants</a></li>
+            <li class="dropdown"><a href="#"><span>Langue</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a class="dropdown-item" href="quiz_english.html">
+                        <img src="assets/img/flags/english.svg" width="40" alt="UK Flag" style="margin-right: 0px;">Anglais</a></li>
+
+                  <li><a class="dropdown-item" href="quiz_arabic.html">
+                        <img src="assets/img/flags/arabic.svg" width="40" alt="Arabic Flag" style="margin-right: 0px;">Arabe</a></li>
+
+                  <li><a class="dropdown-item" href="quiz_french.html">
+                        <img src="assets/img/flags/french.svg" width="40" alt="French Flag" style="margin-right: 0px;">Français</a></li>
+
+                </ul>
+            </li>
             <li><a style="color:white; " href="quiz_french.html" class="btn btn-success btn-lg px-4 py-2">🚀 passez le quiz </a></li>
           
          
@@ -58,22 +71,7 @@
     </div>
   </header>
   <main class="main">
-    <button id="redirectButtonfrancais" class="btn btn-success btn-lg px-8 py-2">français</button>
 
-    <script src="script_bouton_francais.js"></script> <!-- Lien vers le fichier JavaScript francais-->
-
-    
-    
-    <button id="redirectButtonarabe" class="btn btn-success btn-lg px-4 py-2">arabe</button>
-
-    <script src="script_bouton_arabe.js"></script> 
-
-
-     
-     <button id="redirectButtonanglais"  class="btn btn-success btn-lg px-4 py-2">anglais</button>
-
-    <script src="script_bouton_anglais.js"></script> 
-   
     <!-- Écran d'accueil -->
     <div id="welcome-screen" class="screen">
         
@@ -96,10 +94,10 @@
         <nav class="main-nav">
             <button onclick="showSection('home')" class="btn btn-success btn-lg px-4 py-2 row-btn-lg-4">Accueil</button>
             <button onclick="showSection('training')" class="btn btn-success btn-lg px-4 py-2 row-btn-lg-4">Espace de formation</button>
-            <button onclick="showSection('about_french')" class="btn btn-success btn-lg px-4 py-2 row-btn-lg-4">À propos du quiz</button>
+            <button onclick="showSection('about')" class="btn btn-success btn-lg px-4 py-2 row-btn-lg-4">À propos du quiz</button>
             <button onclick="showSection('participate')" class="btn btn-success btn-lg px-4 py-2 row-btn-lg-4">Participer au quiz</button>
         </nav>
-      <br><br><br><br><br><br><br><br><br>
+      <br><br>
         <div id="content" class="content-section">
             <!-- Contenu qui change selon la section sélectionnée -->
         </div>
