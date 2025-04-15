@@ -31,9 +31,6 @@ h3 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
 .welcome-title {
     font-size: 2.5em;
     margin-top: 50px;
@@ -203,4 +200,8 @@ button{
 .club-logo {
     height: 100px;
     /* Changer la taille du logo du Club Environnemental */
+}
+
+number {
+    color: black
 }
