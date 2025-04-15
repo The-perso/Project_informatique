@@ -349,7 +349,7 @@ async function downloadCertificate() {
     // Créer un élément <a> pour le téléchargement
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'certificat_modifie.pdf';
+    a.download = 'Certificat équipe écologique.pdf';
     document.body.appendChild(a);
     a.click();
 
