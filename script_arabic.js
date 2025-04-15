@@ -269,7 +269,12 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
     if (selectedIndex === correctAnswerIndex) {
         userScore++;
         content.innerHTML += `<p style="color: green;">إجابة صحيحة!</p>`;
-    } else {
+
+        // تشغيل الصوت "correct.mp3"
+    		const correctSound = new Audio('assets/sounds/correct.MP3');
+    		correctSound.play();
+    }
+    else {
         content.innerHTML += `
             <p style="color: red;">إجابة خاطئة!</p>
             <p>الإجابة الصحيحة هي: <strong>${question.options[question.correctAnswer]}</strong></p>
@@ -281,6 +286,9 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
             correctAnswer: question.options[question.correctAnswer],
             info: question.info
         });
+        // تشغيل الصوت "wrong.mp3"
+    		const wrongSound = new Audio('assets/sounds/wrong.MP3');
+    		wrongSound.play();
     }
     setTimeout(() => {
         currentQuestionIndex++;

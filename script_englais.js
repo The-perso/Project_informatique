@@ -270,7 +270,12 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
     if (selectedIndex === correctAnswerIndex) {
         userScore++;
         content.innerHTML += `<p style="color: green;">Correct answer!</p>`;
-    } else {
+
+        // Play the sound "correct.mp3"
+    		const correctSound = new Audio('assets/sounds/correct.MP3');
+    		correctSound.play();
+    }
+    else {
         content.innerHTML += `
             <p style="color: red;">Incorrect answer!</p>
             <p>The correct answer is: <strong>${question.options[question.correctAnswer]}</strong></p>
@@ -282,6 +287,9 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
             correctAnswer: question.options[question.correctAnswer],
             info: question.info
         });
+        // Play the sound "wrong.mp3"
+    		const wrongSound = new Audio('assets/sounds/wrong.MP3');
+    		wrongSound.play();
     }
     setTimeout(() => {
         currentQuestionIndex++;
