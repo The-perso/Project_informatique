@@ -78,9 +78,18 @@
         <h1 class="welcome-title">Bienvenue au quiz culturel environnemental</h1>
         <p class="welcome-subtitle">Organisé par le Club Environnemental de l'Institution Allal Ben Abdllah</p>
         <form id="user-info-form" class="welcome-form">
-            <input type="text" id="name" placeholder="Nom et prénom" required>
-            <input type="number" id="age" placeholder="Âge" required>
-            <input type="text" id="school" placeholder="Établissement scolaire" required>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Nom et prénom" required>
+                <small id="name-error" class="error-message"></small>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" placeholder="Âge" required>
+                <small id="age-error" class="error-message"></small>
+            </div>
+            <div class="form-group">
+                <input type="text" id="school" placeholder="Établissement scolaire" required>
+                <small id="school-error" class="error-message"></small>
+            </div>
             <p class="welcome-note">Note : Vous devez remplir toutes les informations pour commencer le quiz.</p>
             <button type="submit" class="btn btn-success btn-lg px-4 py-2">Commencer le quiz</button>
         </form>

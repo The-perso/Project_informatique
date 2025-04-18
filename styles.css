@@ -11,6 +11,19 @@ body {
 
 /* début de ce que j'ai ajouter */
 
+.error-message {
+    color: red;
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+body, .welcome-form {
+    direction: ltr;
+}
+
 /* fin de l'ajoux */
 
 .screen {

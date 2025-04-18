@@ -78,9 +78,18 @@
         <h1 class="welcome-title">مرحبًا بك في المسابقة الثقافية البيئية</h1>
         <p class="welcome-subtitle">التي ينظمها نادي البيئة لمؤسسة علال بن عبد الله</p>
         <form id="user-info-form" class="welcome-form">
-            <input type="text" id="name" placeholder="الاسم الكامل" required>
-            <input type="number" id="age" placeholder="السن " required>
-            <input type="text" id="school" placeholder=" المؤسسة " required>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="الاسم الكامل" required>
+                <small id="name-error" class="error-message"></small>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" placeholder="السن " required>
+                <small id="age-error" class="error-message"></small>
+            </div>
+            <div class="form-group">
+                <input type="text" id="school" placeholder=" المؤسسة " required>
+                <small id="school-error" class="error-message"></small>
+            </div>
             <p class="welcome-note">ملاحظة: يجب عليك إدخال جميع المعلومات لبدء المسابقة.</p>
             <button type="submit" class="btn btn-success btn-lg px-4 py-2">بدء المسابقة</button>
         </form>
