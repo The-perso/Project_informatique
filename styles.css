@@ -1,5 +1,3 @@
-/* Styles généraux */
-
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -8,8 +6,6 @@ body {
     padding: 0;
     color: #333;
 }
-
-/* début de ce que j'ai ajouter */
 
 .error-message {
     color: red;
@@ -20,11 +16,10 @@ body {
 .form-group {
     margin-bottom: 15px;
 }
+
 body, .welcome-form {
     direction: ltr;
 }
-
-/* fin de l'ajoux */
 
 .screen {
     padding: 20px;
@@ -90,13 +85,55 @@ h3 {
 }
 
 .main-header {
-    background: linear-gradient(110deg, #ccda11,#024c3d);
-    /* La couleur de la barre supérieure est blanche */
+    background: linear-gradient(110deg, #024c3d, #ccda11);
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header-arabic {
+    background: linear-gradient(110deg, #ccda11, #024c3d);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: 'Veronica';
+    src: url('assets/fonts/Veronica Caps.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Dinkum';
+    src: url('assets/fonts/Dinkum-Bold.ttf') format('truetype');
+}
+
+.college_name {
+		font-family: 'Veronica', sans-serif;
+    color: white;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.college_name_arabic {
+		font-family: 'Dinkum', sans-serif;
+    color: white;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-right: 20px;
 }
 
 .main-nav {
@@ -139,9 +176,7 @@ h3 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 50px auto;
-    /* Pour centrer la section au milieu de la page */
     max-width: 600px;
-    /* Définir la largeur de la section */
 }
 
 .awareness-title {
@@ -207,12 +242,10 @@ button{
 
 .institution-logo {
     height: 100px;
-    /* Changer la taille du logo de l'institution */
 }
 
 .club-logo {
     height: 100px;
-    /* Changer la taille du logo du Club Environnemental */
 }
 
 number {
