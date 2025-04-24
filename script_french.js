@@ -69,13 +69,13 @@ function showSection(sectionId) {
         case 'training':
             htmlContent = `
                 <h2>Espace de formation</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Pollution de l'air</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Pollution environnementale</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Pollution de l'eau et des océans</button><br><br>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Réchauffement climatique</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Gestion des déchets solides</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Énergie renouvelable</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversité</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Pollution de l'air</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Pollution environnementale</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Pollution de l'eau et des océans</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Réchauffement climatique</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Gestion des déchets solides</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Énergie renouvelable</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversité</button>
             `;
             developersSection.style.display = 'none';
             break;
@@ -91,13 +91,13 @@ function showSection(sectionId) {
         case 'participate':
             htmlContent = `
                 <h2>Participer au quiz</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Pollution de l'air</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Pollution environnementale</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Pollution de l'eau et des océans</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Réchauffement climatique</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Gestion des déchets solides</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Énergie renouvelable</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversité</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Pollution de l'air</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Pollution environnementale</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Pollution de l'eau et des océans</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Réchauffement climatique</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Gestion des déchets solides</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Énergie renouvelable</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversité</button>
             `;
             developersSection.style.display = 'none';
             break;
@@ -128,13 +128,13 @@ function showSection(sectionId) {
                     case 'training':
                         htmlContent = `
                 <h2>Espace de formation</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Pollution de l'air</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Pollution environnementale</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Pollution de l'eau et des océans</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Réchauffement climatique</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Gestion des déchets solides</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Énergie renouvelable</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversité</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">Pollution de l'air</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">Pollution environnementale</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">Pollution de l'eau et des océans</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">Réchauffement climatique</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">Gestion des déchets solides</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">Énergie renouvelable</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">Biodiversité</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -150,13 +150,13 @@ function showSection(sectionId) {
                     case 'participate':
                         htmlContent = `
                 <h2>Participer au quiz</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Pollution de l'air</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Pollution environnementale</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Pollution de l'eau et des océans</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Réchauffement climatique</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Gestion des déchets solides</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Énergie renouvelable</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversité</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">Pollution de l'air</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">Pollution environnementale</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">Pollution de l'eau et des océans</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">Réchauffement climatique</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">Gestion des déchets solides</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">Énergie renouvelable</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">Biodiversité</button>
             `;
                         developersSection.style.display = 'none';
                         break;

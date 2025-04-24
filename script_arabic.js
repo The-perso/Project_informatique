@@ -68,13 +68,13 @@ function showSection(sectionId) {
         case 'training':
             htmlContent = `
                 <h2>مساحة التدريب</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button><br><br>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
@@ -90,13 +90,13 @@ function showSection(sectionId) {
         case 'participate':
             htmlContent = `
                 <h2>المشاركة في الاختبار</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
@@ -127,13 +127,13 @@ function showSection(sectionId) {
                     case 'training':
                         htmlContent = `
                 <h2>مساحة التدريب</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -149,13 +149,13 @@ function showSection(sectionId) {
                     case 'participate':
                         htmlContent = `
                 <h2>المشاركة في الاختبار</h2>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <br><br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <br><button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
