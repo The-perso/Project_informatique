@@ -43,6 +43,14 @@ h3 {
     font-size: 2.5em;
     margin-top: 50px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Veronica', sans-serif;
+}
+
+.welcome-title-arabic {
+    font-size: 2.5em;
+    margin-top: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Dinkum', sans-serif;
 }
 
 .welcome-subtitle {
@@ -201,6 +209,14 @@ h3 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.developers-title {
+		font-family: 'Veronica', sans-serif;
+}
+
+.developers-title-arabic {
+		font-family: 'Dinkum', sans-serif;
+}
+
 .certificate-title {
     font-size: 2.5em;
     margin-top: 50px;
@@ -256,4 +272,36 @@ button{
 
 number {
     color: black
+}
+
+.about-title {
+		font-family: 'Veronica', sans-serif;
+}
+
+.participate-title {
+		font-family: 'Veronica', sans-serif;
+}
+
+.training-title {
+		font-family: 'Veronica', sans-serif;
+}
+
+.end_title {
+		font-family: 'Veronica', sans-serif;
+}
+
+.about-title-arabic {
+		font-family: 'Dinkum', sans-serif;
+}
+
+.participate-title-arabic {
+		font-family: 'Dinkum', sans-serif;
+}
+
+.training-title-arabic {
+		font-family: 'Dinkum', sans-serif;
+}
+
+.end_title_arabic {
+		font-family: 'Dinkum', sans-serif;
 }

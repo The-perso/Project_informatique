@@ -67,20 +67,20 @@ function showSection(sectionId) {
             break;
         case 'training':
             htmlContent = `
-                <h2>مساحة التدريب</h2>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button><br><br>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <h2 class="training-title-arabic">مساحة التدريب</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('water')">تلوث الماء والبحار</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px;" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
         case 'about':
             htmlContent = `
-                <h2>حول الاختبار</h2>
+                <h2 class="about-title-arabic">حول الاختبار</h2>
                 <p>البرنامج عبارة عن لعبة تتكون من عدة أسئلة، لكل منها أربعة خيارات.</p>
                 <p>شروط المشاركة: امتلاك هاتف أو جهاز كمبيوتر والوصول إلى الموقع المخصص لنادي البيئة التابع للمؤسسة.</p>
                 <p>هدف البرنامج: تمكين جميع الطلاب من اجتياز اختبار البيئة "Allal Bin Abdullah" وتشجيع الطلاب على استخدام التكنولوجيا الحديثة لأغراض تعليمية ومفيدة للبيئة.</p>
@@ -89,14 +89,14 @@ function showSection(sectionId) {
             break;
         case 'participate':
             htmlContent = `
-                <h2>المشاركة في الاختبار</h2>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button><br><br>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <h2 class="participate-title-arabic">المشاركة في الاختبار</h2>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px;" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
             developersSection.style.display = 'none';
             break;
@@ -127,13 +127,13 @@ function showSection(sectionId) {
                     case 'training':
                         htmlContent = `
                 <h2>مساحة التدريب</h2>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('air')">تلوث الهواء</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('environment')">التلوث البيئي</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('water')">تلوث الماء والبحار</button><br><br>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('warming')">الاحتباس الحراري</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('water')">تلوث الماء والبحار</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="showTopic('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px;" onclick="showTopic('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -149,13 +149,13 @@ function showSection(sectionId) {
                     case 'participate':
                         htmlContent = `
                 <h2>المشاركة في الاختبار</h2>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('air')">تلوث الهواء</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('environment')">التلوث البيئي</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('water')">تلوث الماء والبحار</button><br><br>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('warming')">الاحتباس الحراري</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
-                <button class="btn btn-success btn-lg px-4 py-2" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('air')">تلوث الهواء</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('environment')">التلوث البيئي</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('water')">تلوث الماء والبحار</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('warming')">الاحتباس الحراري</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('solid-waste')">إدارة النفايات الصلبة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px; margin-right: 5px;" onclick="startQuiz('renewable-energy')">الطاقة المتجددة</button>
+                <button class="btn btn-success btn-lg px-4 py-2" style="margin-bottom: 10px;" onclick="startQuiz('biodiversity')">التنوع البيولوجي</button>
             `;
                         developersSection.style.display = 'none';
                         break;
@@ -342,7 +342,7 @@ function checkAnswer(selectedIndex, correctAnswerIndex) {
 function endQuiz(score) {
     const content = document.getElementById('content');
     content.innerHTML = `
-        <h3>انتهى الاختبار!</h3>
+        <h3 class="end_title_arabic">! انتهى الاختبار</h3>
         <p>نتيجتك: ${score} من أصل ${questions.length-1}</p>
         <button class="btn btn-success btn-lg px-4 py-2" onclick="downloadCertificate()">تنزيل الشهادة (PDF)</button>
         <button class="btn btn-success btn-lg px-4 py-2" onclick="showWrongAnswers()">عرض الإجابات الخاطئة</button>
@@ -351,8 +351,8 @@ function endQuiz(score) {
 }
 
 
-pdfScore = userScore
-totalQuestion = questions.length - 1
+pdfScore = userScore;
+totalQuestion = questions.length - 1;
 const pourcentage = (pdfScore / totalQuestion) * 100;
 
 if (pourcentage > 0 && pourcentage < 20 || pourcentage == 0) {
