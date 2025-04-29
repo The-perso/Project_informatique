@@ -373,7 +373,6 @@ async function downloadCertificate() {
     }
 
 
-    // Chargement du fichier PDF
     const response = await fetch(pdfPath);
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);

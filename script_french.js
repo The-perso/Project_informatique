@@ -372,7 +372,6 @@ async function downloadCertificate() {
       pdfPath = 'assets/pdf/3stars_french.pdf';
     }
 
-    // Chargement du fichier PDF
     const response = await fetch(pdfPath);
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);

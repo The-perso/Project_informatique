@@ -352,8 +352,6 @@ function endQuiz(score) {
 
 
 async function downloadCertificate() {
-  
-  const name = document.getElementById('name').value.trim();
 
   try {
   	const pdfScore = userScore;
@@ -371,36 +369,16 @@ async function downloadCertificate() {
       pdfPath = 'assets/pdf/3stars_arabic.pdf';
     }
 
-    // Chargement du fichier PDF
     const response = await fetch(pdfPath);
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);
     }
     const existingPdfBytes = await response.arrayBuffer()
 
+
     const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
 
-    
-    const pages = pdfDoc.getPages();
-    const firstPage = pages[0];
 
-   
-    const font = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
-    const fontSize = 97.6;
-    const textColor = PDFLib.rgb(0, 0, 0);
-    const x = 150; 
-    const y = 275;
-
-   
-    firstPage.drawText(name, {
-      x, 
-			y,
-      size: fontSize,
-      font,
-      color: textColor,
-    });
-
-    
     const modifiedPdfBytes = await pdfDoc.save();
 
    
